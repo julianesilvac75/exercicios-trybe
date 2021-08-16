@@ -1,4 +1,4 @@
-Turma 16 | Agosto/2021
+## Turma 16 | Agosto/2021
 
 A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional das pessoas estudantes. Com o Modelo de Sucesso Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando já estiver trabalhando.
 
