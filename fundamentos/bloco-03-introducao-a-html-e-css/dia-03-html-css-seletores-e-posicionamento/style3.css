@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+li:hover {
+    background-color: rgb(195, 142, 245);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active, li:active {
+    color: rgb(199, 190, 190);
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
