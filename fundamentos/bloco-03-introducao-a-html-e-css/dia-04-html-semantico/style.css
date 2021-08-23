@@ -47,7 +47,7 @@ main {
 }
 
 section {
-    margin: 30px;
+    margin: 25px;
 }
 
 .articles-area {
@@ -70,6 +70,11 @@ h3 {
 
 .facts {
     padding: 20px;
+}
+
+.sections-style ul li {
+    list-style: none;
+    margin-bottom: 5px;
 }
 
 img {
