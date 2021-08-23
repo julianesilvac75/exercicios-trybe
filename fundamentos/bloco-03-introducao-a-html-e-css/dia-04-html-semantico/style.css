@@ -58,6 +58,16 @@ section {
     margin-top: 15px;
 }
 
+.article-title {
+    margin: 10px 10px 10px 20px;
+    color: rgb(238, 108, 77);
+}
+
+h3 {
+    color: #EE6C4D;
+    margin-bottom: 15px;
+}
+
 .facts {
     padding: 20px;
 }
