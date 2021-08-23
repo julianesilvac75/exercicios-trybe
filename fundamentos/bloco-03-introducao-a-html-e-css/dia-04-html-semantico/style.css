@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: rgb(152, 193, 217);
+}
+
+header {
+    background-color: rgb(41, 50, 66);
+}
+
+header h1 {
+    color: rgb(238, 108, 77);
+    padding: 20px;
+    text-align: center;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 13px;    
+}
+
+header nav ul li a {
+    color: rgb(224, 251, 252);
+}
+
+header nav ul li:hover {
+    background-color: #3D5A80;
+    font-weight: bolder;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin: auto;
+    width: 80%;
+}
