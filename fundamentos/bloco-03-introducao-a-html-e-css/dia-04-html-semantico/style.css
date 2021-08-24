@@ -45,6 +45,7 @@ main {
     margin: auto;
     width: 80%;
     color: #293241;
+    min-width: 600px;
 }
 
 section {
@@ -113,7 +114,16 @@ aside {
     margin-top: 15px;
     background-color: rgb(224, 251, 252);
     float: right;
-    width: 27%;
+    width: 28%;
+}
+
+.more h4 {
+    margin-bottom: 10px;
+}
+
+.more ul {
+    font-size: 0.9em;
+    padding-left: 20px;
 }
 
 footer {
