@@ -53,7 +53,7 @@ section {
 }
 
 .articles-area {
-    background-color: rgb(224, 251, 252);
+    background-color: rgb(247, 247, 247);
     float: left;
     width: 70%;
     margin: 0;
@@ -112,7 +112,7 @@ img {
 
 aside {
     margin-top: 15px;
-    background-color: rgb(224, 251, 252);
+    background-color: rgb(247, 247, 247);
     float: right;
     width: 28%;
 }
