@@ -128,4 +128,9 @@ aside {
 
 footer {
     clear: both;
+    padding: 30px;
+    text-align: center;
+    color: #293241;
+    font-size: 0.8em;
+    font-weight: bolder;
 }
