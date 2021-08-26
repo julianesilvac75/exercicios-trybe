@@ -1,4 +1,4 @@
-let salarioBruto = 5300;
+let salarioBruto = -50;
 let valorINSS;
 
 //calculo do valor do INSS:
