@@ -167,6 +167,92 @@ console.log(trueOrFalse(0));
 
 console.log('-------------------------')
 
-// Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
+// 5- Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
 // Para os ângulos serem de um triângulo válido, a soma dos três devem ser 180 graus.
 // Um ângulo será considerado inválido se não tiver um valor positivo.
+
+function anglesOfTriangle(a, b, c) {
+    let sum = a + b + c;
+    if(a >= 0 && b >= 0 && c > 0) {
+        if(sum === 180) {
+            return true;
+        } else {
+            return false;
+        }
+    
+    } else {
+        return "Erro: insira um valor positivo";
+    }
+}
+
+console.log(anglesOfTriangle(60, -80, 60));
+
+console.log('-------------------------')
+
+//6- Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
+
+function chessInfo(piece) {
+    switch(piece.toLowerCase()) {
+        case "rei":
+            return "O rei pode mover-se em todas as direções (horizontal, vertical e diagonal) somente uma casa de cada vez."
+            break;
+        case "rainha":
+            return "A rainha move-se ao longo da horizontal, vertical e diagonais mas não pode pular outras peças.";
+            break;
+        case "bispo":
+            return "O bispo move-se ao longo da diagonal. Não pode pular outras peças.";
+            break;
+        case "cavalo":
+            return "É a única peça que pode pular as outras. O movimento do cavalo é em forma de “L”, quer dizer, duas casas em sentido horizontal e mais uma na vertical ou vice-versa.";
+            break;
+        case "torre":
+            return "A torre movimenta-se pela vertical ou horizontal, mas não pode pular outras peças.";
+            break;
+        case "peão":
+            return "O peão movimenta-se apenas uma casa para frente e somente captura outras peças na diagonal. Opcionalmente, cada peão pode avançar duas casas no seu primeiro movimento do jogo.";
+            break;
+        default:
+            return "Erro: insira uma peça válida.";
+    }
+}
+
+console.log(chessInfo("Peão"));
+console.log(chessInfo("cavalo"));
+console.log(chessInfo("cadeira"));
+console.log(chessInfo("Bispo"));
+
+console.log('-------------------------')
+
+// 7- Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+// Porcentagem >= 90 -> A
+// Porcentagem >= 80 -> B
+// Porcentagem >= 70 -> C
+// Porcentagem >= 60 -> D
+// Porcentagem >= 50 -> E
+// Porcentagem < 50 -> F
+// O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
+
+function gradeConverter(grade) {
+
+    if(grade >= 90 && grade <= 100) {
+        return "Conceito A";
+    } else if(grade >= 80 && grade < 90) {
+        return "Conceito B";
+    } else if(grade >= 70 && grade < 80) {
+        return "Conceito C";
+    } else if(grade >= 60 && grade < 70) {
+        return "Conceito D";
+    } else if(grade >= 50 && grade < 60) {
+        return "Conceito E";
+    } else if(grade < 50 && grade >= 0) {
+        return "Conceito F";
+    } else {
+        return "Erro - insira uma nota válida";
+    }
+}
+
+console.log(gradeConverter(85));
+console.log(gradeConverter(40));
+console.log(gradeConverter(65));
+console.log(gradeConverter(140));
+console.log(gradeConverter(-15));
