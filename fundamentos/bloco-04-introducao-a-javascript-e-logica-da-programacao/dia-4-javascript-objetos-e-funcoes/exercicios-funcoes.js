@@ -100,3 +100,20 @@ function repeatedNumber(array) {
 //teste
 
 console.log(repeatedNumber([2, 3, 2, 5, 8, 2, 3]));
+
+console.log("----------------");
+
+//6 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+
+function sumNumbers(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i += 1) {
+        sum += i;
+    }
+
+    return sum;
+}
+
+console.log(sumNumbers(4));
+
+console.log("----------------");
