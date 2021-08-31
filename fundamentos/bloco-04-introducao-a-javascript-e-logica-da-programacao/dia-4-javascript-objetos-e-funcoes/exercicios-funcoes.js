@@ -69,3 +69,34 @@ let test3 = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];;
 console.log(biggerNameChecker(test3));
 
 console.log("----------------");
+
+
+//5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+
+function repeatedNumber(array) {
+    let repeatedCounter = 0;
+    let numberCounter = 0;
+    let indexRepeatedNumber = 0;
+
+    for(let index in array) {
+        let checkNumber = array[index];
+        for(let index2 in array) {
+            if(checkNumber === array[index2]) {
+                numberCounter += 1;
+            }
+        }
+
+        if(numberCounter > repeatedCounter) {
+            repeatedCounter = numberCounter;
+            indexRepeatedNumber = index;
+        }
+
+        numberCounter = 0
+    }
+
+    return array[indexRepeatedNumber];
+}
+
+//teste
+
+console.log(repeatedNumber([2, 3, 2, 5, 8, 2, 3]));
