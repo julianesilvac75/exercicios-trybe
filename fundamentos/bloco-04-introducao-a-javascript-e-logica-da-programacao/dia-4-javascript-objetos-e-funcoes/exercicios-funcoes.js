@@ -117,3 +117,29 @@ function sumNumbers(n) {
 console.log(sumNumbers(4));
 
 console.log("----------------");
+
+//7 - Crie uma função que receba uma string word e outra string ending . Verifique se a string ending é o final da string word . Considere que a string ending sempre será menor que a string word .
+
+function verifyWordEnding(word, ending) {
+    let check = false;
+    let indexWord = word.length - 1;
+
+    for(let index = ending.length - 1; index >= 0; index -= 1) {
+        if(ending[index] === word[indexWord]) {
+            check = true;
+        } else {
+            check = false;
+            break;
+        }
+
+        indexWord -= 1;
+    }
+
+    return check;
+}
+
+//teste
+console.log(verifyWordEnding("trybe", "be"));
+console.log(verifyWordEnding("joaofernando", "fernan"));
+console.log(verifyWordEnding("periquito", "pato"));
+console.log(verifyWordEnding("periquito", "quito"));
