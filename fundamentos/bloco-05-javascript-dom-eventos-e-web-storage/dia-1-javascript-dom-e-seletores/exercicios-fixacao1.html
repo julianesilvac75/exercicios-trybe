@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="paragraphs">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="paragraphs">Segundo parágrafo!</p>
+    </header>
+
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      // ------------
+
+      document.querySelector("#page-title").innerText = 'Questão de tempo';
+
+      const paragraph2 = document.querySelector("#second-paragraph");
+      paragraph2.style.color = 'green';
+      paragraph2.style.fontSize = "25px";
+
+      const subtitle = document.querySelector("#subtitle");
+      subtitle.innerText = 'DOM e Seletores';
+      subtitle.style.fontSize = "2em";
+
+      const paragraphsClass = document.querySelector(".paragraphs");
+      paragraphsClass.style.fontSize = "20px";
+
+      const subtitleTag = document.querySelector("h4");
+      subtitleTag.style.color = "blue";
+    </script>
+  </body>
+</html>
