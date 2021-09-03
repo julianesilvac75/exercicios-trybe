@@ -9,7 +9,7 @@
 <body>
 <main id="paiDoPai">
     <section id="pai">
-      <section id="primeiroFilho"></section>
+       <section id="primeiroFilho"></section> <!--removido -->
       <section id="elementoOndeVoceEsta">
         <section id="primeiroFilhoDoFilho"></section>
         <section id="segundoEUltimoFilhoDoFilho"></section>
@@ -18,7 +18,7 @@
       <section id="terceiroFilho"></section>
       <section id="quartoEUltimoFilho"></section>
     </section>
-  </main>
+</main>
 
   <script>
     
@@ -59,6 +59,32 @@
     filho3 = document.getElementById("primeiroFilhoDoFilho").firstElementChild;
 
     console.log(filho3.parentElement.parentElement.nextElementSibling);
+
+    console.log("-----------");
+
+    //parte 3
+
+    let pai = document.getElementById("paiDoPai").firstElementChild;
+
+    pai.removeChild(pai.firstElementChild);
+
+    let elementoOndeVoceEsta = document.getElementById("paiDoPai").firstElementChild.firstElementChild;
+
+    elementoOndeVoceEsta.removeChild(elementoOndeVoceEsta.lastElementChild)
+
+    elementoOndeVoceEsta.removeChild(elementoOndeVoceEsta.lastElementChild)
+
+    let primeiroFilhoDoFilho = document.getElementById("paiDoPai").firstElementChild.firstElementChild.firstElementChild;
+
+    primeiroFilhoDoFilho.removeChild(primeiroFilhoDoFilho.firstElementChild)
+    
+    pai.removeChild(elementoOndeVoceEsta.nextElementSibling);
+    pai.removeChild(elementoOndeVoceEsta.nextElementSibling);
+    pai.removeChild(elementoOndeVoceEsta.nextElementSibling);
+
+    console.log(document.getElementById("primeiroFilhoDoFilho").children);
+
+
   </script>
     
 </body>
