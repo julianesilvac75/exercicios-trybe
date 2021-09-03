@@ -21,6 +21,8 @@
   </main>
 
   <script>
+    
+    // parte 1
     document.getElementById("elementoOndeVoceEsta").parentNode.style.color = "pink";
     
     document.getElementById("primeiroFilhoDoFilho").innerText = "Hello world"
@@ -35,7 +37,28 @@
 
     console.log(document.getElementById("pai").lastElementChild.previousElementSibling)
 
+    console.log("-----------");
 
+    // parte 2
+
+    let irmao1 = document.createElement("div");
+    
+    document.getElementById("elementoOndeVoceEsta").parentElement.appendChild(irmao1)
+    console.log(document.getElementById("pai").children);
+    
+    let filho2 = document.createElement("div");
+
+    document.getElementById("elementoOndeVoceEsta").appendChild(filho2);
+    console.log(document.getElementById("elementoOndeVoceEsta").children);
+
+    let filho3 = document.createElement("div");
+
+    document.getElementById("primeiroFilhoDoFilho").appendChild(filho3);
+    console.log(document.getElementById("primeiroFilhoDoFilho").children);
+
+    filho3 = document.getElementById("primeiroFilhoDoFilho").firstElementChild;
+
+    console.log(filho3.parentElement.parentElement.nextElementSibling);
   </script>
     
 </body>
