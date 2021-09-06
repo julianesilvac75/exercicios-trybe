@@ -59,25 +59,53 @@
 
 
     <script>
-      let h1 = document.createElement('h1');
+    
+
+      let h1 = document.createElement('h1')
       let body = document.querySelector('body');
-      let script = document.querySelector('script');
-      
+
       body.appendChild(h1);
 
-      body.insertBefore(h1, script);
+      document.querySelector('h1').innerText = "Exercício 5.2 - JavaScript DOM";
 
       let main = document.createElement('main');
 
+      main.className = 'main-content';
+
       body.appendChild(main);
 
-      body.insertBefore(main, script);
+      let centerSection = document.createElement('section');
 
-      let section = document.createElement('section');
+      centerSection.className = 'center-content';   
+      
+      main.appendChild(centerSection);
 
-      section.className = 'center-content'
+      let paragraph = document.createElement('p');
 
-      main.appendChild(section);
+      paragraph.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in tristique sapien. Phasellus condimentum accumsan orci, nec finibus velit maximus quis. Maecenas convallis, ligula quis pretium mollis, ex massa feugiat eros, vel pulvinar ligula erat sed neque.'
+
+      centerSection.appendChild(paragraph);
+
+
+      // let h1 = document.createElement('h1');
+      // let body = document.querySelector('body');
+      // let script = document.querySelector('script');
+      
+      // body.appendChild(h1);
+
+      // let main = document.createElement('main');
+
+      // body.appendChild(main);
+
+      // body.insertBefore(main, script);
+
+      // let section = document.createElement('section');
+
+      // section.className = 'center-content';
+
+      // main.appendChild(section);
+
+      // let p = 
 
       
 
