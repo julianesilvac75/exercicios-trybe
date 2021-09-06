@@ -124,6 +124,17 @@
 
       addListItems(list, listContent);
 
+      function addSubtitle(parent,quantity) {
+        for (let i = 1; i <= quantity; i += 1) {
+          let h3 = document.createElement('h3');
+
+          parent.appendChild(h3);
+        }
+      }
+
+      addSubtitle(main, 3);
+
+
     </script>
   </body>
 </html>
