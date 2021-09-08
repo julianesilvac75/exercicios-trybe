@@ -20,24 +20,33 @@ createDaysOfTheWeek();
 
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-function addHolidayClass(element, a, b, c) {
-    if (element.innerText === a || element.innerText === b || element.innerText === c) {
-        element.classList.add('holiday')
+function addHolidayClass(element, array) {
+    for (let index = 0; index < array.length; index += 1) {
+        if (element.innerText === array[index]) {
+            element.classList.add('holiday')
+        }
+    }
+
+}
+
+function addFridayClass(element, array) {
+    for (let index = 0; index < array.length; index += 1) {
+        if (element.innerHTML === array[index]) {
+            element.classList.add('friday');
+        }
+
     }
 }
 
-function addFridayClass(element, a, b, c, d) {
-    if (element.innerHTML === a || element.innerHTML === b || element.innerHTML === c || element.innerHTML === d) {
-        element.classList.add('friday');
-    }
-}
+let listOfHolidays = ['24', '25', '31'];
+let listOfFridays = ['4', '11', '18', '25'];
 
 for (let index = 0; index < dezDaysList.length; index += 1) {
     let day = document.createElement('li');
     day.className = "day";
     day.innerText = dezDaysList[index];
-    addHolidayClass(day, '24', '25', '31');
-    addFridayClass(day, '4', '11', '18', '25');
+    addHolidayClass(day, listOfHolidays);
+    addFridayClass(day, listOfFridays);
     document.getElementById('days').appendChild(day);
 }
 
@@ -69,3 +78,16 @@ document.getElementById('btn-holiday').addEventListener('click', function() {
 // Exercício 4:
 
 createButton('btn-friday', 'Sexta-feira');
+
+// Exercício 5:
+
+document.getElementById('btn-friday').addEventListener('click', function() {
+    let fridays = document.getElementsByClassName('friday');
+    for (let index = 0; index < fridays.length; index += 1) {
+        if (fridays[index].innerText == listOfFridays[index]) {
+            fridays[index].innerText = 'Sextou!!';
+        } else {
+            fridays[index].innerText = listOfFridays[index];
+        }
+    }
+})
