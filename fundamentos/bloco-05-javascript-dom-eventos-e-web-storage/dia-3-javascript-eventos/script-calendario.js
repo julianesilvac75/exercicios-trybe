@@ -41,5 +41,16 @@ function createDaysOfTheWeek() {
       document.getElementById('days').appendChild(day);
   }
 
+  // Exercício 2:
+
+  function createButton(idName, string) {
+      let button = document.createElement('button');
+      button.setAttribute('id', idName);
+      button.innerText = string;
+      document.querySelector('.buttons-container').appendChild(button);
+  }
+
+  let holidayButton = createButton('btn-holiday', 'Feriados')
+
 
 
