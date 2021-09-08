@@ -90,4 +90,18 @@ document.getElementById('btn-friday').addEventListener('click', function() {
             fridays[index].innerText = listOfFridays[index];
         }
     }
-})
+});
+
+// Exercício 6:
+
+let daysOfMonth = document.getElementsByClassName('day');;
+
+for (let index = 0; index < daysOfMonth.length; index += 1) {
+    daysOfMonth[index].addEventListener('mouseover', function(event) {
+        event.target.style.fontSize = '2em';
+    })
+
+    daysOfMonth[index].addEventListener('mouseout', function(event) {
+        event.target.style.fontSize = '1em';
+    })
+}
