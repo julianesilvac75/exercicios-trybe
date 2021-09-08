@@ -64,4 +64,8 @@ document.getElementById('btn-holiday').addEventListener('click', function() {
             holidays[index].style.backgroundColor = 'rgb(117, 204, 117)';
         }
     }
-})
+});
+
+// Exercício 4:
+
+createButton('btn-friday', 'Sexta-feira');
