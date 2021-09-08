@@ -9,48 +9,59 @@ function createDaysOfTheWeek() {
   
       weekDaysList.appendChild(dayListItem);
     };
-  };
+};
   
-  createDaysOfTheWeek();
-  
-  // Escreva seu código abaixo.
+createDaysOfTheWeek();
+
+// Escreva seu código abaixo.
 
 
-  // Exercício 1
+// Exercício 1
 
-  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-  function addHolidayClass(element, a, b, c) {
-      if (element.innerText === a || element.innerText === b || element.innerText === c) {
-          element.classList.add('holiday')
-      }
-  }
+function addHolidayClass(element, a, b, c) {
+    if (element.innerText === a || element.innerText === b || element.innerText === c) {
+        element.classList.add('holiday')
+    }
+}
 
-  function addFridayClass(element, a, b, c, d) {
-      if (element.innerHTML === a || element.innerHTML === b || element.innerHTML === c || element.innerHTML === d) {
-          element.classList.add('friday');
-      }
-  }
+function addFridayClass(element, a, b, c, d) {
+    if (element.innerHTML === a || element.innerHTML === b || element.innerHTML === c || element.innerHTML === d) {
+        element.classList.add('friday');
+    }
+}
 
-  for (let index = 0; index < dezDaysList.length; index += 1) {
-      let day = document.createElement('li');
-      day.className = "day";
-      day.innerText = dezDaysList[index];
-      addHolidayClass(day, '24', '25', '31');
-      addFridayClass(day, '4', '11', '18', '25');
-      document.getElementById('days').appendChild(day);
-  }
+for (let index = 0; index < dezDaysList.length; index += 1) {
+    let day = document.createElement('li');
+    day.className = "day";
+    day.innerText = dezDaysList[index];
+    addHolidayClass(day, '24', '25', '31');
+    addFridayClass(day, '4', '11', '18', '25');
+    document.getElementById('days').appendChild(day);
+}
 
-  // Exercício 2:
+// Exercício 2:
 
-  function createButton(idName, string) {
-      let button = document.createElement('button');
-      button.setAttribute('id', idName);
-      button.innerText = string;
-      document.querySelector('.buttons-container').appendChild(button);
-  }
+function createButton(idName, string) {
+    let button = document.createElement('button');
+    button.setAttribute('id', idName);
+    button.innerText = string;
+    document.querySelector('.buttons-container').appendChild(button);
+}
 
-  let holidayButton = createButton('btn-holiday', 'Feriados')
+createButton('btn-holiday', 'Feriados');
 
+// Exercício 3:
 
-
+document.getElementById('btn-holiday').addEventListener('click', function() {
+    let holidays = document.getElementsByClassName('holiday');
+    for (let index = 0; index < holidays.length; index += 1) {
+        let color = window.getComputedStyle(document.getElementsByClassName('holiday')[index]).getPropertyValue("background-color");
+        if (color === 'rgb(117, 204, 117)') {
+            holidays[index].style.backgroundColor = "rgb(238,238,238)";
+        } else {
+            holidays[index].style.backgroundColor = 'rgb(117, 204, 117)';
+        }
+    }
+})
