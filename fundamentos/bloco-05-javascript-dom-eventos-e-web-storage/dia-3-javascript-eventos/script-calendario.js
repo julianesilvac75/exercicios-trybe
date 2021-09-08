@@ -26,11 +26,18 @@ function createDaysOfTheWeek() {
       }
   }
 
+  function addFridayClass(element, a, b, c, d) {
+      if (element.innerHTML === a || element.innerHTML === b || element.innerHTML === c || element.innerHTML === d) {
+          element.classList.add('friday');
+      }
+  }
+
   for (let index = 0; index < dezDaysList.length; index += 1) {
       let day = document.createElement('li');
       day.className = "day";
       day.innerText = dezDaysList[index];
       addHolidayClass(day, '24', '25', '31');
+      addFridayClass(day, '4', '11', '18', '25');
       document.getElementById('days').appendChild(day);
   }
 
