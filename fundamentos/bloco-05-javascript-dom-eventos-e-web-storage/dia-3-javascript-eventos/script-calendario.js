@@ -124,3 +124,19 @@ function addColorLegend(color) {
     newLegend.style.backgroundColor = color;
     document.querySelector('.my-tasks').appendChild(newLegend);
 }
+
+addColorLegend('rgb(160, 219, 0)');
+
+// Exercício 9:
+
+let tasksList = document.getElementsByClassName('task');
+
+for (let index = 0; index < tasksList.length; index += 1) {
+    tasksList[index].addEventListener('click', function(event) {
+        if (event.target.className === 'task') {
+            event.target.classList.add('selected');
+        } else {
+            event.target.classList.remove('selected');
+        }
+    })
+}
