@@ -105,3 +105,13 @@ for (let index = 0; index < daysOfMonth.length; index += 1) {
         event.target.style.fontSize = '1em';
     })
 }
+
+// Exercício 7:
+
+function addNewTask(task) {
+    let newTask = document.createElement('span');
+    newTask.innerText = task;
+    document.querySelector('.my-tasks').appendChild(newTask);
+}
+
+addNewTask('cozinhar');
