@@ -115,3 +115,12 @@ function addNewTask(task) {
 }
 
 addNewTask('cozinhar');
+
+// Exercício 8:
+
+function addColorLegend(color) {
+    let newLegend = document.createElement('div');
+    newLegend.className = 'task';
+    newLegend.style.backgroundColor = color;
+    document.querySelector('.my-tasks').appendChild(newLegend);
+}
