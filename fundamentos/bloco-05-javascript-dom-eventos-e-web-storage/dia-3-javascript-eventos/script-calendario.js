@@ -140,3 +140,9 @@ for (let index = 0; index < tasksList.length; index += 1) {
         }
     })
 }
+
+// Exercício 10:
+
+for (let index = 0; index < daysOfMonth.length; index += 1) {
+
+}
