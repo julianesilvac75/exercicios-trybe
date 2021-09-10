@@ -127,8 +127,8 @@ function addColorLegend(color) {
 
 addColorLegend('rgb(160, 219, 0)');
 
-// Exercício 9:
 
+// Exercício 9:
 let tasksList = document.getElementsByClassName('task');
 
 for (let index = 0; index < tasksList.length; index += 1) {
@@ -144,5 +144,20 @@ for (let index = 0; index < tasksList.length; index += 1) {
 // Exercício 10:
 
 for (let index = 0; index < daysOfMonth.length; index += 1) {
+    daysOfMonth[index].addEventListener('click', function(event) {
+        for (let taskIndex = 0; taskIndex < tasksList.length; taskIndex += 1) {
+            if (tasksList[taskIndex].className === 'task selected') {
+                let legendColor = window.getComputedStyle(document.getElementsByClassName('selected')[taskIndex]).getPropertyValue("background-color");
+                let dayColor = window.getComputedStyle(daysOfMonth[index]).getPropertyValue("color");
 
+                if (dayColor === legendColor) {
+                    event.target.style.color = 'rgb(119,119,119)';
+                } else {
+                    event.target.style.color = legendColor;
+                }
+            }
+        }
+
+
+    })
 }

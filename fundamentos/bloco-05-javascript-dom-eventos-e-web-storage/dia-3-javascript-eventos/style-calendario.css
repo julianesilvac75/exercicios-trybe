@@ -87,6 +87,10 @@
     vertical-align: middle;
     width: 35px;
   }
+
+  .my-tasks div.selected {
+    border: 2px solid black;
+  }
   
   .my-tasks div:hover {
     height: 45px;
@@ -153,3 +157,5 @@
     margin: 0px;
     padding: 10px 0;
   }
+
+  
