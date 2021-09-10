@@ -161,3 +161,31 @@ for (let index = 0; index < daysOfMonth.length; index += 1) {
 
     })
 }
+
+// Bônus:
+
+let addButton = document.getElementById('btn-add');
+let taskInput = document.getElementById('task-input');
+
+addButton.addEventListener('click', addListElement)
+
+function addListElement() {
+    
+    let taskText = taskInput.value;
+    if (taskText === '') {
+        alert('Insira um compromisso no campo "novo"');
+    } else {
+        let newTask = document.createElement('li');
+        newTask.innerText = taskText;
+        document.querySelector('.task-list').appendChild(newTask);
+    }
+    
+    taskInput.value = '';
+}
+
+taskInput.addEventListener('keypress', function(event) {
+    let pressedKey = event.key;
+    if (pressedKey === 'Enter') {
+        addListElement();
+    }
+})
