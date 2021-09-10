@@ -1,5 +1,10 @@
 * {
     border: 0;
+    /* ARRUMAR FONTES NO HTML*/
+    /* font-family: 'Times New Roman', Times, serif; */
+    /* font-family: 'Kaisei Tokumin', serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-family: Arial, Helvetica, sans-serif; */
     margin: 0;
     padding: 0;
 }
@@ -16,5 +21,184 @@ header {
 
 .btn-container {
     display: inline-block;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.btn-container h2 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.btn-section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    align-items: center;
+    background-color: rgb(181, 181, 173);
+    border: 1px solid black;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    margin: 6px;
+    width: 20px;
+}
+
+.bg-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-black {
+    background-color: rgb(10, 10, 10);
+}
+
+.bg-gray {
+    background-color: rgb(128, 128, 128);
+}
+
+.bg-light-gray {
+    background-color: rgba(180, 179, 179, 0.938);
+}
+
+.font-black {
+    color:rgb(10, 10, 10);
+}
+
+.font-gray {
+    color: rgb(128, 128, 128);
+}
+
+.font-light-gray {
+    color: rgba(180, 179, 179, 0.938);
+}
+
+.font-white {
+    color: rgb(255, 255, 255);
+}
+
+.btn-size-s {
+    font-size: 9px;
+}
+
+.btn-size-m {
+    font-size: 11px;
+}
+
+.btn-size-l {
+    font-size: 14px;
+}
+
+.btn-size-xl {
+    font-size: 16px;
+}
+
+.size-s {
+    font-size: 0.9em;
+}
+
+.size-m {
+    font-size: 1em;
+}
+
+.size-l {
+    font-size: 1.2em;
+}
+
+.size-xl {
+    font-size: 1.4em;
+}
+
+.btn-spacing-s {
+    font-size: 10px;
+}
+.btn-spacing-m {
+    font-size: 13px;
+}
+
+.btn-spacing-l {
+    font-size: 16px;
+}
+
+.btn-spacing-xl {
+    font-size: 20px;
+}
+
+.spacing-s {
+    line-height: 1.2em;
+}
+
+.spacing-m {
+    line-height: 1.5em;
+}
+
+.spacing-l {
+    line-height: 1.8em;
+}
+
+.spacing-xl {
+    line-height: 2em;
+}
+
+.font-times {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.font-kaisei {
+    font-family: 'Kaisei Tokumin', serif;
+}
+
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+button {
+    background-color: rgb(181, 181, 173);
+    border-radius: 10%;
+    margin: 2px;
+}
+
+button:hover {
+    background-color: rgb(142, 140, 140);
+    cursor: pointer;
+}
+
+main {
+    padding: 30px;
+    text-align: justify;
+}
+
+#content h1 {
+    font-size: 2.3em;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#content h2 {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#content h3 {
     margin: 15px;
+}
+
+#content p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: rgb(169, 165, 173);
+    font-size: 0.7em;
+    padding: 15px;
+    text-align: center;
 }
