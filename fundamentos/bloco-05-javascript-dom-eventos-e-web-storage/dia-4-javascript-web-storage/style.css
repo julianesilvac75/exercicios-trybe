@@ -43,7 +43,7 @@ header {
     display: flex;
     height: 20px;
     justify-content: center;
-    margin: 6px;
+    /* margin: 6px; */
     width: 20px;
 }
 
@@ -52,7 +52,7 @@ header {
 }
 
 .bg-black {
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(0, 0, 0);
 }
 
 .bg-gray {
@@ -61,85 +61,6 @@ header {
 
 .bg-light-gray {
     background-color: rgba(180, 179, 179, 0.938);
-}
-
-.font-black {
-    color:rgb(10, 10, 10);
-}
-
-.font-gray {
-    color: rgb(128, 128, 128);
-}
-
-.font-light-gray {
-    color: rgba(180, 179, 179, 0.938);
-}
-
-.font-white {
-    color: rgb(255, 255, 255);
-}
-
-.btn-size-s {
-    font-size: 9px;
-}
-
-.btn-size-m {
-    font-size: 11px;
-}
-
-.btn-size-l {
-    font-size: 14px;
-}
-
-.btn-size-xl {
-    font-size: 16px;
-}
-
-.size-s {
-    font-size: 0.9em;
-}
-
-.size-m {
-    font-size: 1em;
-}
-
-.size-l {
-    font-size: 1.2em;
-}
-
-.size-xl {
-    font-size: 1.4em;
-}
-
-.btn-spacing-s {
-    font-size: 10px;
-}
-.btn-spacing-m {
-    font-size: 13px;
-}
-
-.btn-spacing-l {
-    font-size: 16px;
-}
-
-.btn-spacing-xl {
-    font-size: 20px;
-}
-
-.spacing-s {
-    line-height: 1.2em;
-}
-
-.spacing-m {
-    line-height: 1.5em;
-}
-
-.spacing-l {
-    line-height: 1.8em;
-}
-
-.spacing-xl {
-    line-height: 2em;
 }
 
 .font-times {
@@ -159,13 +80,15 @@ header {
 }
 
 button {
-    background-color: rgb(181, 181, 173);
     border-radius: 10%;
-    margin: 2px;
+    margin: 3px;
+}
+
+.btn-margin:hover {
+    background-color: rgba(128, 128, 128, 0.753);
 }
 
 button:hover {
-    background-color: rgb(142, 140, 140);
     cursor: pointer;
 }
 
