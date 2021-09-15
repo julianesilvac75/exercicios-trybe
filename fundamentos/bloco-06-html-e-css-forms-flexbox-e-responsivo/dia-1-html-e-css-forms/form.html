@@ -56,6 +56,15 @@
 
         <fieldset>
             <legend>Último emprego</legend>
+
+            <label for="input-abstract">Resumo do currículo:</label>
+            <textarea name="abstract" id="input-abstract" cols="60" rows="10" maxlength="1000" required></textarea>
+
+            <label for="input-position">Cargo:</label>
+            <input type="text" name="position" id="input-position" maxlength="40" required>
+
+            <label for="input-date">Data de início:</label>
+            <input type="date" name="date" id="input-date" required>
         </fieldset>
 
         <button type="submit">Enviar</button>

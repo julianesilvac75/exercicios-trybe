@@ -5,3 +5,13 @@
 fieldset {
     margin: 10px 0;
 }
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    resize: none;
+}
