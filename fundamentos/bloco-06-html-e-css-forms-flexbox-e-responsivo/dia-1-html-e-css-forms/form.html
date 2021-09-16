@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -94,7 +95,7 @@
                     <div class="row">
                         <div class="mb-3 col-md-4">
                             <label class="form-label" for="start-date">Data de início:</label>
-                            <input type="text" class="form-control col-md-4"  class="input-data" name="startDate" id="start-date" value="" placeholder="dd/mm/aaaa" required>
+                            <input type="text" class="form-control col-md-4 input-data" name="startDate" data-datepicker id="start-date" value="" placeholder="dd/mm/aaaa" required>
                         </div>
                     </div>
                 </fieldset>
@@ -108,8 +109,9 @@
         </form>
         <section id="form-data"></section>
     </main>
-    
-    
+
+    <script src="node_modules/pikaday/pikaday.js"></script>
     <script src="script.js"></script>
+    
 </body>
 </html>

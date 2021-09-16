@@ -52,7 +52,7 @@ let inputs = {
         required: true,
     },
     startDate: {
-        type: 'date',
+        // type: 'date',
         required: true,
     },
 }
@@ -72,46 +72,46 @@ function defaultValidation(input, name) {
     return true;
 }
 
-function dateValidation(input, name) {
-    if (input.value.length === 0) {
-        return {
-            message: 'A data não foi preenchida!'
-        }
-    }
+// function dateValidation(input, name) {
+//     if (input.value.length === 0) {
+//         return {
+//             message: 'A data não foi preenchida!'
+//         }
+//     }
 
-    let regex = /^\d\d\/\d\d\/\d\d\d\d$/;
+//     let regex = /^\d\d\/\d\d\/\d\d\d\d$/;
 
-    if (!regex.test(input.value)) {
-        return {
-            message: 'Data: Formato inválido'
-        };
-    }
+//     if (!regex.test(input.value)) {
+//         return {
+//             message: 'Data: Formato inválido'
+//         };
+//     }
 
-    let splitted = input.value.split('/');
-    let day = splitted[0];
-    let month = splitted[1];
-    let year = splitted[2];
+//     let splitted = input.value.split('/');
+//     let day = splitted[0];
+//     let month = splitted[1];
+//     let year = splitted[2];
 
-    if (day < 0 || day > 30) {
-        return {
-            message: 'Dia inválido'
-        };
-    }
+//     if (day < 0 || day > 30) {
+//         return {
+//             message: 'Dia inválido'
+//         };
+//     }
 
-    if (month < 0 || month > 12) {
-        return {
-            message: 'Mês inválido'
-        };
-    }
+//     if (month < 0 || month > 12) {
+//         return {
+//             message: 'Mês inválido'
+//         };
+//     }
 
-    if (year < 0) {
-        return {
-            message: 'Ano inválido'
-        };
-    }
+//     if (year < 0) {
+//         return {
+//             message: 'Ano inválido'
+//         };
+//     }
 
-    return true;
-}
+//     return true;
+// }
 
 function getSelectedOption(select) {
     return select.options[select.selectedIndex];
@@ -140,7 +140,7 @@ function radioValidation(radio, name) {
 
 let validationStrategies = {
     default: defaultValidation,
-    date: dateValidation,
+    // date: dateValidation,
     select: selectValidation,
     radio: radioValidation,
 };
@@ -299,8 +299,53 @@ function clearFields() {
     div.innerText = '';
 }
 
+// new Pikaday({
+//     field: document.getElementById('startDate'),
+//     format: 'DD/MM/YYYY',
+//     toString(date, format) {
+//         // you should do formatting based on the passed format,
+//         // but we will just return 'D/M/YYYY' for simplicity
+//         const day = date.getDate();
+//         const month = date.getMonth() + 1;
+//         const year = date.getFullYear();
+//         return `${day}/${month}/${year}`;
+//     },
+//     parse(dateString, format) {
+//         // dateString is the result of `toString` method
+//         const parts = dateString.split('/');
+//         const day = parseInt(parts[0], 10);
+//         const month = parseInt(parts[1], 10) - 1;
+//         const year = parseInt(parts[2], 10);
+//         return new Date(year, month, day);
+//     }
+// });
+
+
+
+
 window.onload = function () {
     createStates();
+
+    new Pikaday({
+        field: document.getElementById('start-date'),
+        format: 'dd/mm/yyyy',
+        toString(date, format) {
+            // you should do formatting based on the passed format,
+            // but we will just return 'D/M/YYYY' for simplicity
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        },
+        parse(dateString, format) {
+            // dateString is the result of `toString` method
+            const parts = dateString.split('/');
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const year = parseInt(parts[2], 10);
+            return new Date(year, month, day);
+        }
+    })
 
     let submitButton = document.getElementById('submit-button');
 
