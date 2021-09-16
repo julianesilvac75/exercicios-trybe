@@ -259,7 +259,7 @@ function renderData() {
 function renderErrorMessages(messages) {
     let form = document.getElementById('cv-form');
     let messageDiv = document.createElement('div');
-    messageDiv.className = 'error';
+    messageDiv.className = 'error bg-warning text-center';
     form.prepend(messageDiv);
 
     for (let message of messages) {
