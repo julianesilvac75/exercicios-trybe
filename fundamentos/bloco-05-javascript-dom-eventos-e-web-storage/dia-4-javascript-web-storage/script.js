@@ -41,42 +41,39 @@ for (let index = 0; index < fontFamilyButton.length; index += 1) {
     })
 }
 
-function initialRenderization() {
-    content.style.backgroundColor = localStorage.getItem('background');
-    content.style.color = localStorage.getItem('color');
-    content.style.fontFamily = localStorage.getItem('fontFamily');
-}
-
-window.onload = initialRenderization();
-
 let changeBtn = document.getElementsByClassName('btn-change');
 
+// Funçao que muda espacamento e tamanho
 function changeFunction(event) {
     let button = event.target;
-
+    
     if (button.classList.contains('decrease-size')) {
         let currentSize = parseInt(getCompStyle(content, 'font-size'));
         if (currentSize > 12) {
-            let newSize = currentSize - 2;
-            content.style.fontSize = `${newSize}px`
+            let newSize = `${currentSize - 2}px`;
+            localStorage.setItem('fontSize', newSize)
+            content.style.fontSize = newSize;
         }
     } else if (button.classList.contains('increase-size')) {
         let currentSize = parseInt(getCompStyle(content, 'font-size'));
         if (currentSize < 32) {
-            let newSize = currentSize + 2;
-            content.style.fontSize = `${newSize}px`;
+            let newSize = `${currentSize + 2}px`;
+            localStorage.setItem('fontSize', newSize)
+            content.style.fontSize = newSize;
         }
     } else if (button.classList.contains('decrease-lineheight')) {
         let currentLineHeight = parseInt(getCompStyle(content, 'line-height'));
         if (currentLineHeight > 16) {
-            let newLineHeight = currentLineHeight - 2;
-            content.style.lineHeight = `${newLineHeight}px`
+            let newLineHeight = `${currentLineHeight - 2}px`;
+            content.style.lineHeight = newLineHeight;
+            localStorage.setItem('lineHeight', newLineHeight);
         }
     } else if (button.classList.contains('increase-lineheight')){
         let currentLineHeight = parseInt(getCompStyle(content, 'line-height'));
         if (currentLineHeight < 40) {
-            let newLineHeight = currentLineHeight + 2;
-            content.style.lineHeight = `${newLineHeight}px`;
+            let newLineHeight = `${currentLineHeight + 2}px`;
+            content.style.lineHeight = newLineHeight;
+            localStorage.setItem('lineHeight', newLineHeight);
         }
     }
 }
@@ -85,3 +82,13 @@ for (let index = 0; index < changeBtn.length; index += 1) {
     changeBtn[index].addEventListener('click', changeFunction);
 }
 
+
+function initialRenderization() {
+    content.style.backgroundColor = localStorage.getItem('background');
+    content.style.color = localStorage.getItem('color');
+    content.style.fontFamily = localStorage.getItem('fontFamily');
+    content.style.fontSize = localStorage.getItem('fontSize');
+    content.style.lineHeight = localStorage.getItem('lineHeight');
+}
+
+window.onload = initialRenderization();
