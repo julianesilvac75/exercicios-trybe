@@ -48,3 +48,40 @@ function initialRenderization() {
 }
 
 window.onload = initialRenderization();
+
+let changeBtn = document.getElementsByClassName('btn-change');
+
+function changeFunction(event) {
+    let button = event.target;
+
+    if (button.classList.contains('decrease-size')) {
+        let currentSize = parseInt(getCompStyle(content, 'font-size'));
+        if (currentSize > 12) {
+            let newSize = currentSize - 2;
+            content.style.fontSize = `${newSize}px`
+        }
+    } else if (button.classList.contains('increase-size')) {
+        let currentSize = parseInt(getCompStyle(content, 'font-size'));
+        if (currentSize < 32) {
+            let newSize = currentSize + 2;
+            content.style.fontSize = `${newSize}px`;
+        }
+    } else if (button.classList.contains('decrease-lineheight')) {
+        let currentLineHeight = parseInt(getCompStyle(content, 'line-height'));
+        if (currentLineHeight > 16) {
+            let newLineHeight = currentLineHeight - 2;
+            content.style.lineHeight = `${newLineHeight}px`
+        }
+    } else if (button.classList.contains('increase-lineheight')){
+        let currentLineHeight = parseInt(getCompStyle(content, 'line-height'));
+        if (currentLineHeight < 40) {
+            let newLineHeight = currentLineHeight + 2;
+            content.style.lineHeight = `${newLineHeight}px`;
+        }
+    }
+}
+
+for (let index = 0; index < changeBtn.length; index += 1) {
+    changeBtn[index].addEventListener('click', changeFunction);
+}
+

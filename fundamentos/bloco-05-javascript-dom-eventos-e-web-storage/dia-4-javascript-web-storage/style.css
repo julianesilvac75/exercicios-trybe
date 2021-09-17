@@ -93,6 +93,7 @@ button:hover {
 }
 
 main {
+    line-height: 22px;
     padding: 30px;
     text-align: justify;
 }
@@ -107,6 +108,7 @@ main {
 #content h2 {
     font-size: 1.5em;
     font-style: italic;
+    line-height: 1.4;
     margin-bottom: 40px;
     text-align: center;
 }
