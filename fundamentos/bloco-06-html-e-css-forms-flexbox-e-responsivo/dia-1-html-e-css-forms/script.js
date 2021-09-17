@@ -5,7 +5,6 @@ function createStates() {
     for (let index = 0; index < states.length; index += 1) {
         let state = document.createElement('option');
         state.setAttribute('value', states[index]);
-        state.setAttribute('data-validate-field', 'state');
         state.innerText = states[index];
         inputState.appendChild(state);
     }
@@ -372,16 +371,48 @@ window.onload = function () {
                 required: true
             }
         },
+        messages: {
+            name: 'Campo obrigatório',
+            email: {
+                required: 'Campo obrigatório',
+                email: 'Digite um e-mail válido'
+            },
+            cpf: {
+                required: 'Campo obrigatório',
+                minLength: 'Digite um CPF válido'
+            },
+            address: 'Campo obrigatório',
+            city: 'Campo obrigatório',
+            state: 'Campo obrigatório',
+            houseType: 'Campo obrigatório',
+            abstract: 'Campo obrigatório',
+            position: 'Campo obrigatório',
+            positionDescription: 'Campo obrigatório',
+            startDate: 'Campo obrigatório',
+        },
+    
 
-        submitHandler: function (form, values, ajax) {
-            ajax(
-                console.log(values)
-            )
+        submitHandler: function (form, values) {
+            let newDiv = document.createElement('div');
+
+            newDiv.innerHTML = `<p>Nome: ${values.name}</p>
+            <p>E-mail: ${values.email}</p>
+            <p>CPF: ${values.cpf}</p>
+            <p>Endereço: ${values.address}</p>
+            <p>Cidade: ${values.city}</p>
+            <p>Estado: ${values.state}</p>
+            <p>Tipo de imóvel: ${values.houseType}</p>
+            <p>Resumo do currículo: ${values.abstract}</p>
+            <p>Cargo: ${values.position}</p>
+            <p>Descrição do cargo: ${values.positionDescription}</p>
+            <p>Data de início: ${values.startDate}</p>`;
+
+            document.getElementById('form-data').appendChild(newDiv);
         }
     })
 
     
-    let submitButton = document.getElementById('submit-button');
+    // let submitButton = document.getElementById('submit-button');
     
     // submitButton.addEventListener('click', function(event) {
     //     event.preventDefault();
@@ -389,6 +420,6 @@ window.onload = function () {
     
     // });
 
-    // let clearButton = document.getElementById('clear-button');
-    // clearButton.addEventListener('click', clearFields)
+    let clearButton = document.getElementById('clear-button');
+    clearButton.addEventListener('click', clearFields)
 }
