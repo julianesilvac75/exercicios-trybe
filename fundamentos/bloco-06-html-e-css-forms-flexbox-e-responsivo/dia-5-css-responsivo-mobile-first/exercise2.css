@@ -121,3 +121,36 @@ footer p {
         max-width: 80%;
     }
 }
+
+@media (min-width: 992px) {
+    header h1 {
+        flex-basis: auto;
+        margin-left: 40px;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .aside-container {
+        align-self: flex-start;
+        flex-basis: 25%;
+        flex-direction: column;
+        font-size: 0.9em;
+        order: 1;
+        padding-left: 20px;
+    }
+
+    .aside-two {
+        align-self: flex-start;
+    }
+
+    .main-content {
+        flex-basis: 75%;
+        padding-right: 15px;
+    }
+
+    footer p {
+        max-width: 800px;
+    }
+}
