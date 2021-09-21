@@ -1,7 +1,6 @@
 body {
     font-size: 1.3em;
     margin: 0 20px;
-
 }
 h1 {
     font-size: 30px;
@@ -16,5 +15,14 @@ img {
 }
 
 figure {
-    margin: 20px 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px;
+}
+
+@media (min-width: 900px) {
+    body {
+        background-color: cadetblue;
+    }
 }
