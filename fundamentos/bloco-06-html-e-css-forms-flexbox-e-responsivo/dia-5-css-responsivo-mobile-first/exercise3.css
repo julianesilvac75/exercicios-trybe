@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 #container {
     margin: 0 auto;
     width: 100%;
@@ -92,5 +96,37 @@
 
     #aside {
         float: none;
+    }
+}
+
+@media (max-width: 640px) {
+    #aside {
+        display: none;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    #navigation ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #navigation li a {
+        border: none;
+    }
+
+    #header {
+        position: fixed;
+        width: 100%;
+    }
+
+    #navigation {
+        margin-top: 80px;
     }
 }
