@@ -1,0 +1,156 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+ }
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+body {
+    color: rgb(1, 42, 74);
+    font-family: 'Noto Serif', serif;
+}
+
+header {
+    align-items: center;
+    background-color: rgb(44, 125, 160);
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    color: rgb(1, 42, 74);
+    font-family: Alice, serif;
+    flex-basis: 400px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #89C2D9;
+}
+
+header ul {
+    display: none;
+}
+
+.container {
+    background-color: rgb(169, 214, 229);
+    padding: 30px;
+}
+
+aside {
+    margin-bottom: 30px;
+}
+
+aside h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+ul li {
+    line-height: 22px;
+    list-style: none;
+}
+
+.main-content {
+    text-align: justify;
+}
+
+.title-container {
+    line-height: 20px;
+    text-align: center;
+    font-family: Alice, serif;
+    margin: 60px 0 30px 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+footer {
+    align-items: center;
+    background-color: rgb(44, 125, 160);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+footer h3 {
+    font-size: 0.6em;
+    margin: 10px;
+}
+
+footer p {
+    font-size: 0.7em;
+    max-width: 650px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    header {
+        justify-content: space-between;
+    }
+
+    header ul {
+        display: flex;
+    }
+    
+    header ul li {
+        margin-right: 25px;
+        text-transform: uppercase;
+    }
+
+    aside ul {
+        padding-left: 0;
+    }
+
+    .aside-container {
+        display: flex;
+    }
+
+    .aside-one {
+        order: 1;
+        flex-basis: 40%;
+    }
+
+    .aside-two {
+        align-self: center;
+        flex-basis: 60%;
+    }
+
+    footer p {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    header h1 {
+        flex-basis: auto;
+        margin-left: 40px;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .aside-container {
+        align-self: flex-start;
+        flex-basis: 25%;
+        flex-direction: column;
+        font-size: 0.9em;
+        order: 1;
+        padding-left: 20px;
+    }
+
+    .aside-two {
+        align-self: flex-start;
+    }
+
+    .main-content {
+        flex-basis: 75%;
+        padding-right: 15px;
+    }
+
+    footer p {
+        max-width: 800px;
+    }
+}
