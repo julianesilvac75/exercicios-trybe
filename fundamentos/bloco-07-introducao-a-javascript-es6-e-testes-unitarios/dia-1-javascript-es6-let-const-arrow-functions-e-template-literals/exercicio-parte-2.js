@@ -29,3 +29,18 @@ const longestWord = (string) => {
 }
 
 console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu")) // retorna 'aconteceu'
+
+console.log('-----------------');
+
+// Exercício 4
+// Função 1:
+
+const replace = (string) => `Tryber ${string} aqui!`
+
+const skills = ['JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Git'];
+
+const concat = (replace(string), skills) => {
+
+}
+
+
