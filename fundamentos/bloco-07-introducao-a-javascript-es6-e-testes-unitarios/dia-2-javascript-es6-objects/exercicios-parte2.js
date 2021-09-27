@@ -33,3 +33,11 @@ console.log('----------');
 const keyList = (obj) => Object.keys(obj);
 
 console.log(keyList(lesson1));
+
+console.log('----------');
+
+// Exercício 3
+
+const objSize = (obj) => Object.keys(obj).length;
+
+console.log(objSize(lesson2));
