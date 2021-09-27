@@ -65,3 +65,11 @@ console.log('----------');
 const studentsAmount = (obj) => obj.lesson1.numeroEstudantes + obj.lesson2.numeroEstudantes + obj.lesson3.numeroEstudantes;
 
 console.log(studentsAmount(allLessons));
+
+console.log('----------');
+
+// Exercício 7
+
+const valueByIndex = (obj, index) => Object.values(obj)[index];
+
+console.log(valueByIndex(lesson1, 0));
