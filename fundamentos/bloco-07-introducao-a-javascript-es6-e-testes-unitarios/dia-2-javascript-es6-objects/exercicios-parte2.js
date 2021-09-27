@@ -41,3 +41,11 @@ console.log('----------');
 const objSize = (obj) => Object.keys(obj).length;
 
 console.log(objSize(lesson2));
+
+console.log('----------');
+
+// Exercício 4
+
+const valueList = (obj) => Object.values(obj);
+
+console.log(valueList(lesson3));
