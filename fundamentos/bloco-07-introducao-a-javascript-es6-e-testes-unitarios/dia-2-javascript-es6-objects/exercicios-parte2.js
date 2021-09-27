@@ -57,3 +57,11 @@ console.log('----------');
 const allLessons = Object.assign({lesson1, lesson2, lesson3})
 
 console.log(allLessons);
+
+console.log('----------');
+
+// Exercício 6
+
+const studentsAmount = (obj) => obj.lesson1.numeroEstudantes + obj.lesson2.numeroEstudantes + obj.lesson3.numeroEstudantes;
+
+console.log(studentsAmount(allLessons));
