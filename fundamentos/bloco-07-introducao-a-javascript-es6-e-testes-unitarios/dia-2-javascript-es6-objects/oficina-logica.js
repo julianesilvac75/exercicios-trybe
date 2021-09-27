@@ -3,11 +3,12 @@ let levelPok = '';
 let ataquePok = '';
 let defesaPok = '';
 
-function salvarPokemon (nomePok) {
+function salvarPokemon (nomePokemon, levelPokemon, ataquePokemon, defesaPokemon) {
     let pokemon = {
+        nome: nomePokemon;
     }
 
-    if(nomePok === ) {
+    if(if levelPokemon <) {
         pokemon.nome = nomePok;
     }
 
