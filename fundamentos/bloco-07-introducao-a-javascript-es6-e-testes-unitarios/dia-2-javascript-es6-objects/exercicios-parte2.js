@@ -73,3 +73,23 @@ console.log('----------');
 const valueByIndex = (obj, index) => Object.values(obj)[index];
 
 console.log(valueByIndex(lesson1, 0));
+
+console.log('----------');
+
+// Exercício 8
+
+const verifyPair = (obj, key, value) => {
+    const arr = Object.entries(obj);
+    const verify = [key, value];
+    
+    for (let index = 0; index < arr.length; index += 1) {
+        if (arr[index] == verify) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+console.log(verifyPair(lesson3, 'turno', 'noite'))
+// verifyPair(lesson3, 'turno', 'noite')
