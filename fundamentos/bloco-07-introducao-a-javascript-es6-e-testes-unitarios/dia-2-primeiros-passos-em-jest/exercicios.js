@@ -30,4 +30,63 @@ function myFizzBuzz(num) {
   return num;
 }
 
-module.exports = {sum, myRemove, myFizzBuzz};
+// Exercício 4
+
+
+function addLetters(string, index) {
+  let vogals = { a: 1, e: 2, i: 3, o: 4, u: 5 };
+  let check = 0;
+  let letter = '';
+  for (let vogal in vogals) {
+    if (string[index] === vogal) {
+      letter += vogals[vogal];
+      check += 1;
+    }
+  }
+  if (check === 0) {
+    letter += string[index];
+  }
+  return letter;
+}
+
+function encode(string) {
+  let finalString = '';
+
+  for (let index = 0; index < string.length; index += 1) {
+    finalString += addLetters(string, index);
+  }
+
+  return finalString;
+}
+
+function changeLetters(string, index) {
+  let vogals = { 1: 'a', 2: 'e', 3: 'i', 4: 'o', 5: 'u' };
+  let check = 0;
+  let letter = '';
+
+  for (let vogal in vogals) {
+    if (string[index] === vogal) {
+      letter += vogals[vogal];
+      check += 1;
+    }
+  }
+
+  if (check === 0) {
+    letter += string[index];
+  }
+  return letter;
+}
+
+function decode(string) {
+  let finalString = '';
+
+  for (let index = 0; index < string.length; index += 1) {
+    finalString += changeLetters(string, index);
+  }
+
+  return finalString;
+}
+
+let teste = "teste";
+
+module.exports = {sum, myRemove, myFizzBuzz, encode, decode, teste};
