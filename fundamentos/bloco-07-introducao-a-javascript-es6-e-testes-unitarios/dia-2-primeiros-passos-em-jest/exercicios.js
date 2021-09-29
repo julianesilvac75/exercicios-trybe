@@ -87,6 +87,24 @@ function decode(string) {
   return finalString;
 }
 
-let teste = "teste";
+// Exercício 5
 
-module.exports = {sum, myRemove, myFizzBuzz, encode, decode, teste};
+function techList(array, name) {
+  if (array.length === 0) {
+    return 'Vazio!';
+  }
+
+  array.sort();
+
+  if (array.length > 0) {
+    for (let index = 0; index < array.length; index += 1) {
+      array[index] = {
+        tech: array[index],
+        name,
+      };
+    }
+    return array;
+  } 
+}
+
+module.exports = {sum, myRemove, myFizzBuzz, encode, decode, techList};
