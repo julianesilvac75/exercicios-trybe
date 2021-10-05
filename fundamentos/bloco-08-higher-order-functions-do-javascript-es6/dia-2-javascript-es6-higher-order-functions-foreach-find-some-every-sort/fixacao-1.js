@@ -49,4 +49,54 @@ const musicas = [
       return music.id === '31031685';
   }
 
-  console.log(musicas.find(findMusic))
+  console.log(musicas.find(findMusic));
+
+console.log('-----------------');
+
+// Exercício de fixação 5  - some
+
+const names2 = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasName = (arr, name) => arr.some(element => element === name);
+
+console.log(hasName(names2, 'Cláudia'))
+
+console.log('-----------------');
+
+// Exercício de fixação 6 - every
+
+const people = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+  
+const verifyAges = (arr, minimumAge) => arr.every(person => person.age >= minimumAge);
+  
+console.log(verifyAges(people, 18));
+
+console.log('-----------------');
+
+// Exercício de fixação 7 - sort
+
+const people2 = [
+    { name: 'Mateus', age: 18 },
+    { name: 'José', age: 16 },
+    { name: 'Ana', age: 23 },
+    { name: 'Cláudia', age: 20 },
+    { name: 'Bruna', age: 19 },
+];
+  
+people2.sort((el1, el2) => el1.age - el2.age)
+  
+console.log(people2);
+
+console.log('-----------------');
+
+// Exercício de fixação 8 - sort
+
+people2.sort((el1, el2) => el2.age - el1.age);
+
+console.log(people2);
