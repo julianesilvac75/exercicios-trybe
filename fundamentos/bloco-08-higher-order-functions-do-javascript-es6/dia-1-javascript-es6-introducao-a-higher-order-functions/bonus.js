@@ -38,4 +38,28 @@ const dragonDamage = () => Math.round(Math.random() * (dragon.strength - 15) + 1
   
 const battleMembers = { mage, warrior, dragon };
 
-console.log(dragonDamage());
+const gameActions = {
+    // 1ª HOF
+    warrior: (warriorDamage) => {
+        const warriorInfo = warriorDamage();
+        battleMembers.dragon.healthPoints -= warriorInfo;
+        battleMembers.warrior.damage = warriorInfo;
+    },
+    mage: (mageFunction) => {
+        const mageInfo = mageFunction();
+        dragon.healthPoints -= mageInfo.damage;
+        mage.damage = mageInfo.damage;
+        mage.mana -= mageInfo.mana;
+    },
+    dragon: (dragonDamage) => {
+        const dragonInfo = dragonDamage();
+        mage.healthPoints -= dragonInfo;
+        warrior.healthPoints -= dragonInfo;
+        dragon.damage = dragonInfo;
+    },
+    result: () => {
+        return battleMembers;
+    }
+  };
+
+console.log(gameActions.result());
