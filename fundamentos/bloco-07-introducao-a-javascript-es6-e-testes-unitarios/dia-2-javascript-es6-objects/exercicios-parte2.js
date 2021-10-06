@@ -79,11 +79,11 @@ console.log('----------');
 // Exercício 8
 
 const verifyPair = (obj, key, value) => {
-    const arr = Object.entries(obj);
-    const verify = [key, value];
+    const arrKey = Object.keys(obj);
+    const arrValue = Object.values(obj)
     
-    for (let index = 0; index < arr.length; index += 1) {
-        if (arr[index] == verify) {
+    for (let index = 0; index < arrKey.length; index += 1) {
+        if (arrKey[index] === key && arrValue[index] === value) {
             return true;
         }
     }
@@ -91,5 +91,5 @@ const verifyPair = (obj, key, value) => {
     return false;
 }
 
-console.log(verifyPair(lesson3, 'turno', 'noite'))
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'))
 // verifyPair(lesson3, 'turno', 'noite')
