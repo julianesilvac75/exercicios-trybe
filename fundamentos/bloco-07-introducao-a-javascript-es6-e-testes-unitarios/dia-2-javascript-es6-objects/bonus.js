@@ -37,3 +37,29 @@ const countStudents = (obj) => {
 }
 
 console.log(countStudents(allLessons));
+
+console.log('------------');
+
+// 2 - Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes.
+
+const createReport = (obj, teacher) => {
+    const lessons = Object.keys(obj);
+    const result = {
+        professor: '?',
+        aulas: [],
+        estudantes: 0
+    }
+
+    for (let index = 0; index < lessons.length; index += 1) {
+        
+        if (obj[lessons[index]].professor === teacher) {
+            result.professor = teacher;
+            result.aulas.push(obj[lessons[index]].materia);
+            result.estudantes += obj[lessons[index]].numeroEstudantes;
+        }
+    }
+
+    return result;
+}
+
+console.log(createReport(allLessons, 'Maria Clara'));
