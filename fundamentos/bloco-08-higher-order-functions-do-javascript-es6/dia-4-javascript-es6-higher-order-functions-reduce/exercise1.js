@@ -5,10 +5,6 @@ const arrays = [
     [true],
     [4, 5, 6],
 ];
-
-const teste = (arrays) => {
-    return arrays[0];
-}
   
 function flatten() {
    return arrays.reduce((acc, currentValue) => {
