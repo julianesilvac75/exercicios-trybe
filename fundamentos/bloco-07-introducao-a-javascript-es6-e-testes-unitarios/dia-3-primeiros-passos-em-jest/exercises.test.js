@@ -1,7 +1,9 @@
 const {
     sum,
     myRemove,
-    myFizzBuzz
+    myFizzBuzz,
+    encode,
+    decode
 } = require('./exercises.js');
 
 describe('Exercício 1', () => {
@@ -47,5 +49,32 @@ describe('Exercício 3', () => {
     it('Verifica se a função retorna false caso o parâmetro não seja um número', () => {
         expect(myFizzBuzz('teste')).toBeFalsy();
         expect(myFizzBuzz(true)).toBeFalsy();
+    })
+})
+
+describe('Exercício 4', () => {
+    it('Verifica se encode e decode são funções', () => {
+        expect(typeof encode).toEqual('function');
+        expect(typeof decode).toEqual('function');
+    });
+    it('Verifica se a função encode converte as vogais a, e, i, o, u em 1, 2, 3, 4, 5, respectivamente', () => {
+        expect(encode('aeiou')).toEqual('12345');
+        expect(encode('uoiea')).toEqual('54321');
+    });
+    it('Verifica se a função decode converte os números 1, 2, 3, 4, 5 em a, e, i, o, u, respectivamente', () => {
+        expect(decode('12345')).toEqual('aeiou');
+        expect(decode('54321')).toEqual('uoiea');
+    });
+    it('Verifica se as demais letras e números não são convertidas para cada caso', () => {
+        expect(encode('bcdf')).toEqual('bcdf');
+        expect(decode('67890')).toEqual('67890');
+        expect(encode('Hello world')).toEqual('H2ll4 w4rld');
+        expect(decode('H2ll4 w4rld')).toEqual('Hello world')
+    })
+    it('Verifica se a string retornada pelas funções tem o mesmo número de caracteres que a string passada como parâmetro', () => {
+        expect(encode('testando um dois').length).toBe(16);
+        expect(decode('t2st1nd4 5m d43s').length).toBe(16);
+        expect(encode('Hello world').length).toBe(11);
+        expect(decode('H2ll4 w4rld').length).toBe(11);
     })
 })
