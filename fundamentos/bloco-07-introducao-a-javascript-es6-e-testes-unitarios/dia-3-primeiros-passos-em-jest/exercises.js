@@ -57,10 +57,26 @@ function decode(string) {
   return encodeDecode(vogals, string)
 }
 
+// Exercício 5
+
+function techList(array, name) {
+  array.sort();
+
+  const techItem = (tech) => {
+    return {
+      tech,
+      name
+    }
+  }
+
+  return (array.length > 0) ? array.map(techItem) : 'Vazio!';
+}
+
 module.exports = {
     sum,
     myRemove,
     myFizzBuzz,
     encode,
-    decode
+    decode,
+    techList
 }
