@@ -72,11 +72,20 @@ function techList(array, name) {
   return (array.length > 0) ? array.map(techItem) : 'Vazio!';
 }
 
+function hydrate(string) {
+  const numbersOfString = string.match(/\d+/g);
+
+  const sum = numbersOfString.reduce((acc, number) => acc + parseInt(number, 10), 0)
+
+  return (sum === 1) ? `${sum} copo de água` : `${sum} copos de água`;
+}
+
 module.exports = {
     sum,
     myRemove,
     myFizzBuzz,
     encode,
     decode,
-    techList
+    techList,
+    hydrate
 }
