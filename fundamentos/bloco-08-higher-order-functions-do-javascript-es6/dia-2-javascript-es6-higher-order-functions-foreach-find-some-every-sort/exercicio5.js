@@ -70,7 +70,7 @@ const expectedResult = false;
 function everyoneWasBornOnSecXX() {
     const regExp = /^19/;
 
-    return books.every(book => regExp.test(book.author.birthYear));
+    return books.every((book) => regExp.test(book.author.birthYear))
 }
 
 console.log(everyoneWasBornOnSecXX());
