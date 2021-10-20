@@ -1,4 +1,4 @@
-# Dia 8.2 - JavaScript ES6 - Higher Order Functions - map e filter
+# Dia 8.3 - JavaScript ES6 - Higher Order Functions - map e filter
 
 Exercícios de fixação sobre os conceitos e as aplicações de algumas_Higher Order Functions_
 
