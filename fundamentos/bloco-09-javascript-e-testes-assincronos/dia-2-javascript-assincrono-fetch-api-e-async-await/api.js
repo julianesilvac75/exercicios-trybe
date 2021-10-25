@@ -14,8 +14,9 @@ function fetchApi() {
 
 async function addCoinsToDOM() {
     const coinsList = await fetchApi();
+    const filtered = coinsList.filter(coin => Number(coin.rank) <= 10);
 
-    coinsList.forEach(coin => {
+    filtered.forEach(coin => {
         const { name, symbol, priceUsd } = coin;
         const newLi = document.createElement('li');
         newLi.innerText = `${name} (${symbol}): ${Number(priceUsd).toFixed(2)}`;
