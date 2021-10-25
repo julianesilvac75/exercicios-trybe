@@ -1,20 +1,49 @@
-// 7 - Escreva um teste que verifique a chamada do callback de uma função uppercase , que transforma as letras de uma palavra em letras maiúsculas. Lembre-se de ter cuidado com os falso-positivos em testes assíncronos.
+// 8 - Para o próximo exercício, você vai sentir na pele o primeiro dia de um treinador Pokémon! No laboratório do Professor Carvalho, você é informado de que existem três pokémons disponíveis: Bulbasaur, Charmander e Squirtle. Complete a chamada da função getPokemonDetails de modo que ela imprima no console os detalhes do pokémon que você escolheu. PS: é possível que o sistema do Professor Carvalho apresente erros caso o pokémon não exista no banco de dados, então não se esqueça de tratá-los também, combinado?
 
-const uppercase = (str, callback) => {
+const pokemons = [
+  {
+    name: 'Bulbasaur',
+    type: 'Grass',
+    ability: 'Razor Leaf',
+  },
+  {
+    name: 'Charmander',
+    type: 'Fire',
+    ability: 'Ember',
+  },
+  {
+    name: 'Squirtle',
+    type: 'Water',
+    ability: 'Water Gun',
+  },
+];
+
+function getPokemonDetails(filter, callback) {
   setTimeout(() => {
-    callback(str.toUpperCase());
-  }, 500);
-};
-
-// uppercase('teste', console.log)
-
-test('Verifica se a chamada da função uppercase tem o retorno esperado', (done) => {
-  uppercase('teste', (str) => {
-    try {
-      expect(str).toMatch('TESTE');
-      done();
-    } catch (error) {
-      done(error);
+    if (pokemons.find(filter) === undefined) {
+      return callback(new Error('Não temos esse pokémon para você :('), null);
     }
-  })
-})
+    const pokemon = pokemons.find(filter);
+
+    const { name, type, ability } = pokemon;
+
+    const messageFromProfOak = `Olá, seu pokémon é o ${name}, o tipo dele é ${type} e a habilidade principal dele é ${ability}`;
+
+    callback(null, messageFromProfOak);
+  }, 2000);
+}
+
+getPokemonDetails(
+  (pokemon) => pokemon.name === 'Bulbasar',
+  (error, message) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(message);
+    }
+  }
+);
+
+module.exports = {
+  getPokemonDetails,
+};
