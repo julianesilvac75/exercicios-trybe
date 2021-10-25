@@ -21,5 +21,10 @@ Tente descobrir qual url vamos utilizar para buscar as informações que precisa
 - Pronto, temos um array com os dados das moedas e um esqueleto do HTML, agora vamos fazer com que as moedas aparecam na tela. Utilize o seguinte formato: Nome da moeda (símbolo da moeda): valor em dólares . Exemplo: Bitcoin (BTC): 46785.06 .
 - Conseguiu mostrar as moedas na tela? Agora, que tal usar uma Higher Order Function para filtrar o array das moedas para mostrar apenas as 10 primeiras?
 
+### Bônus
+
+Que tal usarmos uma API para converter o preço das crypto moedas do exercício anterior para a nossa moeda local ao invés de mostrar o seu valor em dólar?
+Para este exercício vamos utilizar a Currency API . Tente descobrir qual url retorna os dados necessários para este exercício.
+
 
 >Written with [StackEdit](https://stackedit.io/).
