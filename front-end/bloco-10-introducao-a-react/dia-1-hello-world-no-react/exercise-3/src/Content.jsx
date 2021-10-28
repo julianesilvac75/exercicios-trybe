@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./Content.css";
+
 const conteudos = [
     {
       conteudo: 'High Order Functions',
@@ -23,8 +25,8 @@ const conteudos = [
 ];
 
 const callback = ({ conteudo, bloco, status}, index) => {
-    return <li key={index}>
-        <p>O conteúdo é: {conteudo}</p>
+    return <li key={index} className="list-item">
+        <p>O conteúdo é: <span className="content-title">{conteudo}</span></p>
         <p>Status: {status}</p>
         <p>Bloco: {bloco}</p>
     </li>;
@@ -34,7 +36,7 @@ class Content extends Component {
     render() {
         const items = conteudos.map(callback);
 
-        return <ul>{items}</ul>
+        return <ul className="list-container">{items}</ul>
     }
 }
 
