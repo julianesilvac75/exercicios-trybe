@@ -14,8 +14,4 @@ Exercícios sobre estado dos componentes e sobre eventos no React.
 **8 -** Defina uma lógica que estabeleça que, quando o número de cliques no botão for par, ele deve ser verde.
 **9 -** A cor atual do botão deve ser impressa num console.log() de dentro da função do evento que lida com o clique. Faça isso acontecer!
 
-**Bônus:**  
-
-1.  
-
 >Written with [StackEdit](https://stackedit.io/).
