@@ -5,14 +5,17 @@ class Button extends Component {
         super();
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            firstButtonClicks: 0,
-            secondButtonClicks: 0,
-            thirdButtonClicks: 0
+            buttonClicks: 0,
         }
     }
     
     handleClick() {
+        this.setState((previousState, _props) => ({
+            buttonClicks: previousState.buttonClicks + 1
+        }));
+
         const { consoleText } = this.props;
+
         console.log(consoleText);
     }
 
@@ -20,7 +23,7 @@ class Button extends Component {
         const { buttonText } = this.props;
 
         return(
-            <button onClick={this.handleClick}>{buttonText}</button>
+            <button onClick={this.handleClick}>{buttonText} ({this.state.buttonClicks})</button>
         );
     }
 }
