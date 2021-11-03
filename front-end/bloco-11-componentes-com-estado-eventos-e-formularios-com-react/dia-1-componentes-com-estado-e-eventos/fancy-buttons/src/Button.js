@@ -4,6 +4,11 @@ class Button extends Component {
     constructor() {
         super();
         this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            firstButtonClicks: 0,
+            secondButtonClicks: 0,
+            thirdButtonClicks: 0
+        }
     }
     
     handleClick() {
