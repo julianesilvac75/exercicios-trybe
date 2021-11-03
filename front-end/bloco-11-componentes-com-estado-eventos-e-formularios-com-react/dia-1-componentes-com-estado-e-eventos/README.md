@@ -11,6 +11,8 @@ Exercícios sobre estado dos componentes e sobre eventos no React.
 - Dica: Uma possibilidade é você definir três chaves, uma para cada botão!
 **6 -** Agora, quando um botão for clicado, altere de forma assíncrona o estado deste botão de zero para um.
 **7 -** Por fim, baseie-se no estado anterior ao atual para incrementar a contagem de cliques cada vez que um botão for clicado!
+**8 -** Defina uma lógica que estabeleça que, quando o número de cliques no botão for par, ele deve ser verde.
+**9 -** A cor atual do botão deve ser impressa num console.log() de dentro da função do evento que lida com o clique. Faça isso acontecer!
 
 **Bônus:**  
 
