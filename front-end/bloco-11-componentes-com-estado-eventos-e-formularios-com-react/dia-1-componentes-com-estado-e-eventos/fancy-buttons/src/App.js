@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-
-function handleClick() {
-  console.log('Você clicou!');
-}
+import Button from './Button';
 
 class App extends Component {
   render() {
     return(
-      <button onClick={handleClick}>Clique aqui!</button>
+      <>
+        <Button buttonText="Clique aqui!" consoleText="Você clicou no primeiro botão" />
+        <Button buttonText="Não! Clique aqui!" consoleText="Você clicou no segundo botão" />
+        <Button buttonText="Espere! Clique aqui!" consoleText="Você clicou no terceiro botão" />
+      </>
     );
   }
 }
