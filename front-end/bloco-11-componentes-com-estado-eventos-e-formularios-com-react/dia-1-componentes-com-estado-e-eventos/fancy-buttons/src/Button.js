@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 
 class Button extends Component {
-    render() {
-        const { buttonText, consoleText } = this.props;
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+    }
+    
+    handleClick() {
+        const { consoleText } = this.props;
+        console.log(consoleText);
+    }
 
-        function handleClick() {
-            console.log(consoleText);
-        }
+    render() {
+        const { buttonText } = this.props;
+
         return(
-            <button onClick={handleClick}>{buttonText}</button>
+            <button onClick={this.handleClick}>{buttonText}</button>
         );
     }
 }
