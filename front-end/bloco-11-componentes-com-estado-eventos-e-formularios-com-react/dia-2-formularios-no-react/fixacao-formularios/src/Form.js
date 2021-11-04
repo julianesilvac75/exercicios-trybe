@@ -80,6 +80,11 @@ class Form extends Component {
         </label>
 
         <label>
+          Foto de perfil:
+          <input type="file" />
+        </label>
+
+        <label>
             <input
               type="checkbox"
               name="concordo"
