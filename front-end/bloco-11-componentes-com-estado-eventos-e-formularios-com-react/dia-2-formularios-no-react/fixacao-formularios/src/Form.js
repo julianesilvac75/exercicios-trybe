@@ -5,10 +5,7 @@ class Form extends Component {
   constructor() {
     super();
 
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleAgeChange = this.handleAgeChange.bind(this);
-    this.handleStateChange = this.handleStateChange.bind(this);
-    this.handleAboutYouChange = this.handleAboutYouChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
         nome: '',
@@ -18,29 +15,15 @@ class Form extends Component {
     }
   }
 
-  handleNameChange(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-        nome: event.target.value
+        [name]: value
     })
   }
   
-  handleAgeChange(event) {
-    this.setState({
-        idade: event.target.value
-    })
-  }
-
-  handleStateChange(event) {
-    this.setState({
-        estado: event.target.value
-    })
-  }
-
-  handleAboutYouChange(event) {
-    this.setState({
-        sobreVoce: event.target.value
-    })
-  }
 
   render() {
     return (
@@ -52,7 +35,7 @@ class Form extends Component {
             type="text"
             name="nome"
             value={this.state.nome}
-            onChange={this.handleNameChange}
+            onChange={this.handleChange}
             required
           />  
         </label>
@@ -63,7 +46,7 @@ class Form extends Component {
             type="number"
             name="idade"
             value={this.state.idade}
-            onChange={this.handleAgeChange}
+            onChange={this.handleChange}
             required
           />
         </label>
@@ -73,7 +56,7 @@ class Form extends Component {
           <select
             name="estado"
             value={this.state.estado}
-            onChange={this.handleStateChange}
+            onChange={this.handleChange}
             required
           >
             <option value="" selected disabled>-- Escolha um estado --</option>
@@ -88,9 +71,9 @@ class Form extends Component {
         <label>
           Sobre você:
           <textarea
-            name="sobre-voce"
+            name="sobreVoce"
             value={this.state.sobreVoce}
-            onChange={this.handleAboutYouChange}
+            onChange={this.handleChange}
             required
           />
         </label>
