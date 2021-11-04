@@ -11,7 +11,8 @@ class Form extends Component {
         nome: '',
         idade: '',
         estado: '',
-        sobreVoce: ''
+        sobreVoce: '',
+        concordo: false
     }
   }
 
@@ -76,6 +77,15 @@ class Form extends Component {
             onChange={this.handleChange}
             required
           />
+        </label>
+
+        <label>
+            <input
+              type="checkbox"
+              name="concordo"
+              onChange={this.handleChange}
+            />
+            Você concorda?
         </label>
 
       </form>
