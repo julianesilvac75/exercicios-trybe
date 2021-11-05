@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Profile extends Component {
-    render() {
+     render() {
         const { handleChange, state: { sobreVoce } } = this.props;
 
         return (
