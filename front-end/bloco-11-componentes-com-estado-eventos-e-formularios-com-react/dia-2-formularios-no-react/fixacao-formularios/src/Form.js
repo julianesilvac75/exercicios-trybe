@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import './Form.css'
+import PersonalData from "./PersonalData";
+import Profile from "./Profile";
 
 class Form extends Component {
   constructor() {
@@ -30,65 +32,9 @@ class Form extends Component {
     return (
         <form>
 
-            <fieldset>
-                <legend>Dados pessoais</legend>
-                <label>
-                    Nome:
-                    <input
-                        type="text"
-                        name="nome"
-                        value={this.state.nome}
-                        onChange={this.handleChange}
-                        required
-                    />  
-                </label>
+            <PersonalData handleChange={this.handleChange} state={this.state} />
 
-                <label>
-                    Idade:
-                    <input
-                        type="number"
-                        name="idade"
-                        value={this.state.idade}
-                        onChange={this.handleChange}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Estado:
-                    <select
-                        name="estado"
-                        value={this.state.estado}
-                        onChange={this.handleChange}
-                        required
-                    >
-                        <option value="" defaultValue disabled>-- Escolha um estado --</option>
-                        <option>Paraná</option>
-                        <option>Rio de Janeiro</option>
-                        <option>São Paulo</option>
-                        <option>Santa Catarina</option>
-                        <option>Pará</option>
-                    </select>
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Perfil</legend>
-                <label>
-                    Sobre você:
-                    <textarea
-                        name="sobreVoce"
-                        value={this.state.sobreVoce}
-                        onChange={this.handleChange}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Foto de perfil:
-                    <input type="file" />
-                    </label>
-            </fieldset>
+            <Profile handleChange={this.handleChange} state={this.state} />
 
             <label>
                 <input

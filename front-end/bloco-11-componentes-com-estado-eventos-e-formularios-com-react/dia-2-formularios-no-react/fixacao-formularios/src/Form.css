@@ -3,3 +3,7 @@ form , label {
     flex-direction: column;
     margin: 10px;
 }
+
+.error-message {
+    color: red;
+}
