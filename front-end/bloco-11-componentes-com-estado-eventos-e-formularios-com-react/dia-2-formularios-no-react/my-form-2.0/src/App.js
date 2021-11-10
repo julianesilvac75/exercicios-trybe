@@ -82,7 +82,7 @@ class App extends Component {
           isInputRequired={ true }
         />
 
-        {/* Obrigatório */}
+        {/* Obrigatório, fazer validação de email */}
         <Input
           id="email-input"
           labelText="E-mail"
