@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Input from './components/Input';
-const ESTADOS_BRASILEIROS = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
+import CvSummary from './components/CvSummary';
+import PersonalData from './components/PersonalData';
+import PreviousJob from './components/PreviousJob';
 
 class App extends Component {
   constructor() {
@@ -12,6 +13,10 @@ class App extends Component {
     this.onAddressInputChange = this.onAddressInputChange.bind(this);
     this.onCityInputBlur = this.onCityInputBlur.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
+    this.onMouseEnterPosition = this.onMouseEnterPosition.bind(this);
+    this.onEmailInputBlur = this.onEmailInputBlur.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.onCleanButtonClick = this.onCleanButtonClick.bind(this);
 
     this.state ={
       nameInput: '',
@@ -21,6 +26,13 @@ class App extends Component {
       cityInput: '',
       stateSelect: '',
       houseType: '',
+      cvSummary: '',
+      positionInput: '',
+      jobDescription: '',
+      isEmailInvalid: false,
+      didMouseEnter: false,
+      showSaveButtonWarning: false,
+      isFormValid: '',
     }
   }
 
@@ -63,114 +75,140 @@ class App extends Component {
     console.log(target.name);
   }
 
+  onMouseEnterPosition() {
+    const { didMouseEnter } = this.state;
+
+    if (!didMouseEnter) {
+      this.setState({
+        didMouseEnter: true,
+      })
+
+      return alert('Preencha com cuidado essa informação.')
+    }
+  }
+
+  onEmailInputBlur({ target }) {
+    const { value } = target;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    this.setState({
+      isEmailInvalid: !regex.test(value),
+    })
+  }
+
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    const { nameInput,
+      emailInput,
+      cpfInput,
+      addressInput,
+      cityInput,
+      stateSelect,
+      houseType,
+      cvSummary,
+      positionInput,
+      jobDescription,
+      isEmailInvalid } = this.state;
+
+    const params = [
+      (nameInput.length > 0),
+      (emailInput.length > 0),
+      (cpfInput.length > 0),
+      (addressInput.length > 0),
+      (cityInput.length > 0),
+      (stateSelect.length > 0),
+      (houseType.length > 0),
+      (cvSummary.length > 0),
+      (positionInput.length > 0),
+      (jobDescription.length > 0),
+      (isEmailInvalid === false)
+    ];
+
+    const validation = params.every((param) => param);
+
+    validation ? this.setState({ isFormValid: validation, showSaveButtonWarning: false }) : this.setState({ showSaveButtonWarning: true });
+  }
+
+  onCleanButtonClick() {
+    this.setState({
+      nameInput: '',
+      emailInput: '',
+      cpfInput: '',
+      addressInput: '',
+      cityInput: '',
+      stateSelect: '',
+      houseType: '',
+      cvSummary: '',
+      positionInput: '',
+      jobDescription: '',
+      isEmailInvalid: false,
+      didMouseEnter: false,
+      showSaveButtonWarning: false,
+      isFormValid: '',
+    })
+  }
+
   render() {
-    const { nameInput, emailInput, cpfInput, addressInput, cityInput, stateSelect } = this.state;
+    const { nameInput, emailInput, cpfInput, addressInput, cityInput, stateSelect, cvSummary, positionInput, jobDescription, houseType, isFormValid, isEmailInvalid, showSaveButtonWarning } = this.state;
 
     return (
-      <fieldset>
-        <legend>Dados pessoais</legend>
-
-        {/* Obrigatório */}
-        <Input
-          id="name-input"
-          labelText="Nome"
-          type="text"
-          inputName="nameInput"
-          maxLength="40"
-          stateValue={ nameInput }
-          onChange={ this.onNameInputChange }
-          isInputRequired={ true }
-        />
-
-        {/* Obrigatório, fazer validação de email */}
-        <Input
-          id="email-input"
-          labelText="E-mail"
-          type="text"
-          inputName="emailInput"
-          maxLength="50"
-          stateValue={ emailInput }
-          onChange={ this.onInputChange }
-          isInputRequired={ true }
-        />
-
-        {/* Obrigatório */}
-        <Input
-          id="cpf-input"
-          labelText="CPF"
-          type="text"
-          inputName="cpfInput"
-          maxLength="11"
-          stateValue={ cpfInput }
-          onChange={ this.onInputChange }
-          isInputRequired={ true }
-        />
-
-        {/* Obrigatório */}
-        <Input
-          id="address-input"
-          labelText="Endereço"
-          type="text"
-          inputName="addressInput"
-          maxLength="200"
-          stateValue={ addressInput }
-          onChange={ this.onAddressInputChange }
-          isInputRequired={ true }
-        />
-
-        {/* Obrigatório */}
-        <Input
-          id="city-input"
-          labelText="Cidade"
-          type="text"
-          inputName="cityInput"
-          maxLength="28"
-          stateValue={ cityInput }
-          onChange={ this.onInputChange }
-          onBlur={ this.onCityInputBlur }
-          isInputRequired={ true }
-        />
-
-        <label
-          htmlFor="state-select"
-          className="input-area"
-        >
-          Estado
-          <select
-            id="state-select"
-            value={ stateSelect }
-            name="stateSelect"
-            onChange={ this.onInputChange }
-            required
-          >
-            <option value="" defaultValue>-- Escolha um estado --</option>
-            {ESTADOS_BRASILEIROS.map((state) => <option key={state}>{state}</option>)}
-          </select>
-          {!stateSelect && <span className="warning">Escolha um estado</span>}
-        </label>
-
-        {/* Obrigatório */}
-        <label htmlFor="house-input">
-          <input
-            name="houseType"
-            value="Casa"
-            type="radio"
-            id="house-input"
-            onChange={ this.onInputChange }
+      <>
+        <form>
+          <PersonalData
+            nameInput={ nameInput }
+            emailInput={ emailInput }
+            cpfInput={ cpfInput}
+            addressInput={ addressInput }
+            cityInput={ cityInput }
+            stateSelect={ stateSelect }
+            onInputChange={ this.onInputChange }
+            onNameInputChange={ this.onNameInputChange }
+            onAddressInputChange={ this.onAddressInputChange }
+            onCityInputBlur={ this.onCityInputBlur }
+            onEmailInputBlur={ this.onEmailInputBlur }
+            isEmailInvalid={ isEmailInvalid }
           />
-          Casa
-        </label>
-        <label htmlFor="apartment-input">
-          <input
-            name="houseType"
-            value="Apartamento"
-            type="radio"
-            id="apartment-input"
-            onChange={ this.onInputChange }/>
-          Apartamento
-        </label>
 
-      </fieldset>
+          <PreviousJob
+            onMouseEnterPosition={ this.onMouseEnterPosition }
+            cvSummary={ cvSummary }
+            onInputChange={ this.onInputChange }
+            positionInput={ positionInput }
+            jobDescription={ jobDescription }
+          />
+
+          {showSaveButtonWarning && <p className="warning">Preencha todos os campos!</p>}
+          <button
+            onClick={ this.onSaveButtonClick }
+            type="submit"
+          >
+            Salvar currículo
+          </button>
+          <button
+            onClick={ this.onCleanButtonClick }
+            type="button"
+          >
+            Limpar
+          </button>
+        </form>
+
+        <section>
+
+          {isFormValid && <CvSummary
+            fullName={ nameInput }
+            cpf={ cpfInput }
+            email={ emailInput }
+            address={ addressInput }
+            city={ cityInput }
+            state={ stateSelect }
+            houseType={ houseType }
+            cvSummary={ cvSummary }
+            position={ positionInput }
+            jobDescription={ jobDescription}
+          />}
+          
+        </section>
+      </>
     );
   }
 }

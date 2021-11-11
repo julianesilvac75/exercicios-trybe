@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { id, labelText, type, inputName, maxLength, stateValue, onChange, onBlur, isInputRequired } = this.props;
+    const { id, labelText, type, inputName, maxLength, stateValue, onChange, onBlur, isInputRequired, isEmailInvalid } = this.props;
 
     return (
       <label
@@ -20,7 +20,8 @@ class Input extends Component {
           onBlur={ onBlur }
           required={ isInputRequired }
         />
-        {stateValue.length === parseInt(maxLength) && <span className="warning">Máximo de caracteres: {maxLength}</span>}
+        {stateValue.length === parseInt(maxLength) && <span className="warning">Limite de caracteres: {maxLength}</span>}
+        {inputName === 'emailInput' && (isEmailInvalid && <span className="warning">Insira um e-mail válido</span>)}
       </label>
     );
   }
