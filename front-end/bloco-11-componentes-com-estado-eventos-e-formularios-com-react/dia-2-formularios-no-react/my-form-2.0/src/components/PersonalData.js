@@ -13,7 +13,9 @@ class PersonalData extends Component {
       onInputChange,
       onNameInputChange,
       onAddressInputChange,
-      onCityInputBlur } = this.props;
+      onCityInputBlur,
+      onEmailInputBlur,
+      isEmailInvalid } = this.props;
 
     return (
       <fieldset>
@@ -40,7 +42,9 @@ class PersonalData extends Component {
           maxLength="50"
           stateValue={ emailInput }
           onChange={ onInputChange }
+          onBlur={ onEmailInputBlur }
           isInputRequired={ true }
+          isEmailInvalid={ isEmailInvalid }
         />
 
         {/* Obrigatório */}

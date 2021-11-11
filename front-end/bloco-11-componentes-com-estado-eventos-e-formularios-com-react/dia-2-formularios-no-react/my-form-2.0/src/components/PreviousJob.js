@@ -20,7 +20,6 @@ class PreviousJob extends Component {
             value={ cvSummary }
             maxLength="1000"
             onChange={ onInputChange }
-            required
           />
           { cvSummary.length === 1000 && <span className="warning">Limite de caracteres: 1000</span>}
         </label>
@@ -37,7 +36,6 @@ class PreviousJob extends Component {
             maxLength="40"
             onChange={ onInputChange }
             onMouseEnter={ onMouseEnterPosition }
-            required
           />
           {positionInput.length === 40 && <span className="warning">Limite de caracteres: 40</span>}
         </label>
@@ -50,7 +48,6 @@ class PreviousJob extends Component {
           maxLength="500"
           stateValue={ jobDescription }
           onChange={ onInputChange }
-          isInputRequired={ true }
         />
       </fieldset>
     )
