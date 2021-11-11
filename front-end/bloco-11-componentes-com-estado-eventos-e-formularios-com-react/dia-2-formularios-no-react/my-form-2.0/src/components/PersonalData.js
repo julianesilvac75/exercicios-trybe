@@ -21,7 +21,6 @@ class PersonalData extends Component {
       <fieldset>
         <legend>Dados pessoais</legend>
 
-         {/* Obrigatório */}
            <Input
           id="name-input"
           labelText="Nome"
@@ -30,10 +29,8 @@ class PersonalData extends Component {
           maxLength="40"
           stateValue={ nameInput }
           onChange={ onNameInputChange }
-          isInputRequired={ true }
         />
 
-        {/* Obrigatório, fazer validação de email */}
         <Input
           id="email-input"
           labelText="E-mail"
@@ -43,11 +40,9 @@ class PersonalData extends Component {
           stateValue={ emailInput }
           onChange={ onInputChange }
           onBlur={ onEmailInputBlur }
-          isInputRequired={ true }
           isEmailInvalid={ isEmailInvalid }
         />
 
-        {/* Obrigatório */}
         <Input
           id="cpf-input"
           labelText="CPF"
@@ -56,10 +51,8 @@ class PersonalData extends Component {
           maxLength="11"
           stateValue={ cpfInput }
           onChange={ onInputChange }
-          isInputRequired={ true }
         />
 
-        {/* Obrigatório */}
         <Input
           id="address-input"
           labelText="Endereço"
@@ -68,10 +61,8 @@ class PersonalData extends Component {
           maxLength="200"
           stateValue={ addressInput }
           onChange={ onAddressInputChange }
-          isInputRequired={ true }
         />
 
-        {/* Obrigatório */}
         <Input
           id="city-input"
           labelText="Cidade"
@@ -81,7 +72,6 @@ class PersonalData extends Component {
           stateValue={ cityInput }
           onChange={ onInputChange }
           onBlur={ onCityInputBlur }
-          isInputRequired={ true }
         />
 
         <label
@@ -94,7 +84,6 @@ class PersonalData extends Component {
             value={ stateSelect }
             name="stateSelect"
             onChange={ onInputChange }
-            required
           >
             <option value="" defaultValue>-- Escolha um estado --</option>
             {ESTADOS_BRASILEIROS.map((state) => <option key={state}>{state}</option>)}
@@ -102,7 +91,6 @@ class PersonalData extends Component {
           {!stateSelect && <span className="warning">Escolha um estado</span>}
         </label>
 
-        {/* Obrigatório */}
         <label htmlFor="house-input">
           <input
             name="houseType"
@@ -124,8 +112,8 @@ class PersonalData extends Component {
         </label>
 
       </fieldset>
-        )
-    }
+    )
+  }
 }
 
 export default PersonalData;
