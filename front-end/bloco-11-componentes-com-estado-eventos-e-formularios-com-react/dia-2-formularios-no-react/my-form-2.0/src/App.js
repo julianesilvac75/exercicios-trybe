@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PersonalData from './components/PersonalData';
+import PreviousJob from './components/PreviousJob';
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class App extends Component {
     this.onAddressInputChange = this.onAddressInputChange.bind(this);
     this.onCityInputBlur = this.onCityInputBlur.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
+    this.onMouseEnterPosition = this.onMouseEnterPosition.bind(this);
 
     this.state ={
       nameInput: '',
@@ -20,6 +22,10 @@ class App extends Component {
       cityInput: '',
       stateSelect: '',
       houseType: '',
+      cvSummary: '',
+      positionInput: '',
+      jobDescription: '',
+      didMouseEnter: false,
     }
   }
 
@@ -62,22 +68,44 @@ class App extends Component {
     console.log(target.name);
   }
 
+  onMouseEnterPosition() {
+    const { didMouseEnter } = this.state;
+
+    if (!didMouseEnter) {
+      this.setState({
+        didMouseEnter: true,
+      })
+
+      return alert('Preencha com cuidado essa informação.')
+    }
+  }
+
   render() {
-    const { nameInput, emailInput, cpfInput, addressInput, cityInput, stateSelect } = this.state;
+    const { nameInput, emailInput, cpfInput, addressInput, cityInput, stateSelect, cvSummary, positionInput, jobDescription } = this.state;
 
     return (
-      <PersonalData
-        nameInput={ nameInput }
-        emailInput={ emailInput }
-        cpfInput={ cpfInput}
-        addressInput={ addressInput }
-        cityInput={ cityInput }
-        stateSelect={ stateSelect }
-        onInputChange={ this.onInputChange }
-        onNameInputChange={ this.onNameInputChange }
-        onAddressInputChange={ this.onAddressInputChange }
-        onCityInputBlur={ this.onCityInputBlur }
-      />
+      <form>
+        <PersonalData
+          nameInput={ nameInput }
+          emailInput={ emailInput }
+          cpfInput={ cpfInput}
+          addressInput={ addressInput }
+          cityInput={ cityInput }
+          stateSelect={ stateSelect }
+          onInputChange={ this.onInputChange }
+          onNameInputChange={ this.onNameInputChange }
+          onAddressInputChange={ this.onAddressInputChange }
+          onCityInputBlur={ this.onCityInputBlur }
+        />
+
+        <PreviousJob
+          onMouseEnterPosition={ this.onMouseEnterPosition }
+          cvSummary={ cvSummary }
+          onInputChange={ this.onInputChange }
+          positionInput={ positionInput }
+          jobDescription={ jobDescription }
+        />
+      </form>
     );
   }
 }

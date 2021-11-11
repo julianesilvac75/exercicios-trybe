@@ -20,7 +20,7 @@ class Input extends Component {
           onBlur={ onBlur }
           required={ isInputRequired }
         />
-        {stateValue.length === parseInt(maxLength) && <span className="warning">Máximo de caracteres: {maxLength}</span>}
+        {stateValue.length === parseInt(maxLength) && <span className="warning">Limite de caracteres: {maxLength}</span>}
       </label>
     );
   }
