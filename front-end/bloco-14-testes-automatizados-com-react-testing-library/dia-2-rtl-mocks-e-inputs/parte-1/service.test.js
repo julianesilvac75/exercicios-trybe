@@ -1,6 +1,11 @@
-let {randomNumber, upperText, firstLetter, joinStrings} = require('./service');
+let {randomNumber, upperText, firstLetter, joinStrings, dogPicturesAPI} = require('./service');
 // const service = require('./service');
 jest.mock('./service');
+
+const RESPONSE = {
+  "message": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_14522.jpg",
+  "status": "success"
+};
 
 describe('Exercício 1', () => {
   test('Testa se a função foi chamada', () => {
@@ -62,3 +67,26 @@ describe('Exercício 3', () => {
 
 // Exercício 4 --- resolver problema, está no arquivo teste.test.js
 
+describe('Exercício 5', () => {
+  // referência:https://app.betrybe.com/course/front-end/testes-automatizados-com-react-testing-library/rtl-mocks-e-inputs/solutions/96709d24-8962-42f8-9318-a5dac56aacc5/exercicios/9188582b-4426-4a99-a0fd-f0244162dd8f?use_case=calendar
+  dogPicturesAPI = jest.fn();
+  afterEach(dogPicturesAPI.mockReset);
+
+  test("testando requisição caso a promisse resolva", async () => {
+    dogPicturesAPI.mockResolvedValue("request sucess");
+
+    dogPicturesAPI();
+    expect(dogPicturesAPI).toHaveBeenCalled();
+    expect(dogPicturesAPI).toHaveBeenCalledTimes(1);
+    await expect(dogPicturesAPI()).resolves.toBe("request sucess");
+    expect(dogPicturesAPI).toHaveBeenCalledTimes(2);
+  });
+
+  test("testando requisição caso a promisse seja rejeitada", async () => {
+    dogPicturesAPI.mockRejectedValue("request failed");
+
+    expect(dogPicturesAPI).toHaveBeenCalledTimes(0);
+    await expect(dogPicturesAPI()).rejects.toMatch("request failed");
+    expect(dogPicturesAPI).toHaveBeenCalledTimes(1);
+  });
+})
