@@ -1,5 +1,6 @@
-let {randomNumber} = require('./service');
-// jest.mock('./service');
+let {randomNumber, upperText, firstLetter, joinStrings} = require('./service');
+// const service = require('./service');
+jest.mock('./service');
 
 describe('Exercício 1', () => {
   test('Testa se a função foi chamada', () => {
@@ -58,3 +59,6 @@ describe('Exercício 3', () => {
     expect(randomNumber(5)).toBe(10);
   });
 });
+
+// Exercício 4 --- resolver problema, está no arquivo teste.test.js
+
