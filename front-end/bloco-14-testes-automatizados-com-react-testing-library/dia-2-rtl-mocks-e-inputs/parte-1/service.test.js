@@ -1,11 +1,6 @@
-let {randomNumber, upperText, firstLetter, joinStrings, dogPicturesAPI} = require('./service');
-// const service = require('./service');
-jest.mock('./service');
-
-const RESPONSE = {
-  "message": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_14522.jpg",
-  "status": "success"
-};
+let {randomNumber, dogPicturesAPI} = require('./service');
+const service = require('./service');
+// jest.mock('./service');
 
 describe('Exercício 1', () => {
   test('Testa se a função foi chamada', () => {
@@ -65,7 +60,24 @@ describe('Exercício 3', () => {
   });
 });
 
-// Exercício 4 --- resolver problema, está no arquivo teste.test.js
+describe('Exercício 4', () => {
+  test('Testa a implementação dos mocks', () => {
+    // referência: https://app.slack.com/client/TMDDFEPFU/C02B4PPBERE/thread/C02B4PPBERE-1638888393.176300
+    const mockFirstFunc = jest.spyOn(service, 'upperText').mockImplementation((str) => str.toLowerCase());
+    const mockSecondFunc = jest.spyOn(service, 'firstLetter').mockImplementation((str) => str[str.length - 1]);
+    const mockThirdFunc = jest.spyOn(service, 'joinStrings').mockImplementation((a, b, c) => a + b + c);
+
+    expect(service.upperText('HELLO WORLD')).toBe('hello world');
+    expect(service.firstLetter('hello world')).toBe('d');
+    expect(service.joinStrings('hello ', 'world', '!')).toBe('hello world!');
+  });
+
+  test('Testa se a função foi restaurada', () => {
+    service.upperText.mockRestore();
+
+    expect(service.upperText('hello world')).toBe('HELLO WORLD');
+  })
+})
 
 describe('Exercício 5', () => {
   // referência:https://app.betrybe.com/course/front-end/testes-automatizados-com-react-testing-library/rtl-mocks-e-inputs/solutions/96709d24-8962-42f8-9318-a5dac56aacc5/exercicios/9188582b-4426-4a99-a0fd-f0244162dd8f?use_case=calendar
