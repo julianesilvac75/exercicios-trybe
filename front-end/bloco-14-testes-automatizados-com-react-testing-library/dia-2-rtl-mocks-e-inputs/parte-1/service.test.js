@@ -1,15 +1,14 @@
-const { expect } = require('@jest/globals');
-let randomNumber = require('./service');
+let {randomNumber} = require('./service');
 
-describe('Testa a função randomNumber', () => {
-  test('a função foi chamada', () => {
+describe('Exercício 1', () => {
+  test('Testa se a função foi chamada', () => {
     randomNumber = jest.fn();
     randomNumber();
 
     expect(randomNumber).toHaveBeenCalled();
   });
 
-  test('a função foi chamada 3 vezes', () => {
+  test('Testa se a função foi chamada 3 vezes', () => {
     randomNumber = jest.fn();
 
     randomNumber();
@@ -22,9 +21,19 @@ describe('Testa a função randomNumber', () => {
     expect(randomNumber).toHaveBeenCalledTimes(3);
   });
 
-  test('o retorno da função deve ser 10', () => {
+  test('Testa se o retorno da função é 10', () => {
     randomNumber = jest.fn().mockReturnValue(10);
 
-    expect(randomNumber()).toBe(12);
+    expect(randomNumber()).toBe(10);
+  });
+});
+
+describe('Exercício 2', () => {
+  test('', () => {
+    randomNumber.mockImplementationOnce((a, b) => a / b);
+
+    expect(randomNumber(4, 2)).toBe(2);
+    expect(randomNumber(4, 2)).not.toBe(2);
+
   })
 })
