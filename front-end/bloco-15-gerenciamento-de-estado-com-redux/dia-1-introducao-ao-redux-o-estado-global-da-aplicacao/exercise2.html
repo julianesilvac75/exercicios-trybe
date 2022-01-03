@@ -56,7 +56,9 @@
           meuSegundoReducer,
       });
 
-      console.log(reducerCombinado);
+      const store = Redux.createStore(reducerCombinado);
+
+      console.log(store.getState());
     </script>
   </body>
 </html>
