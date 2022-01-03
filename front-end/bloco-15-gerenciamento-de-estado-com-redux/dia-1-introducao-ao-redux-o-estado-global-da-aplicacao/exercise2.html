@@ -97,6 +97,15 @@
         }, 3000);
       };
 
+      store.subscribe(() => {
+        const state = store.getState();
+
+        document.getElementById('nome-1').innerHTML = state.meuPrimeiroReducer.nome;
+        document.getElementById('sobrenome-1').innerHTML = state.meuPrimeiroReducer.sobrenome;
+        document.getElementById('nome-2').innerHTML = state.meuSegundoReducer.nome;
+        document.getElementById('sobrenome-2').innerHTML = state.meuSegundoReducer.sobrenome;
+      })
+
       console.log(store.getState());
     </script>
   </body>
