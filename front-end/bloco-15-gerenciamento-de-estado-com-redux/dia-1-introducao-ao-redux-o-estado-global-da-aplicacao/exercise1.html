@@ -71,6 +71,7 @@
 
         const previousButton = document.getElementById('previous');
         const nextButton = document.getElementById('next');
+        const valueEl = document.getElementById('value');
 
         previousButton.addEventListener('click', () => {
             store.dispatch(previousColor());
@@ -80,6 +81,14 @@
         nextButton.addEventListener('click', () => {
             store.dispatch(nextColor());
             console.log(store.getState());
+        });
+
+        store.subscribe(() => {
+            const state = store.getState();
+            const color = state.colors[state.index];
+
+            valueEl.innerHTML = color;
+            valueEl.style.backgroundColor = color;
         });
 
 
