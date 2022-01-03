@@ -36,8 +36,28 @@
         cidade: 'São Paulo',
       };
 
+      const changeName = (nome) => ({
+        type: 'CHANGE_NAME',
+        nome,
+      });
+
+      const changeLastName = (sobrenome) => ({
+        type: 'CHANGE_LAST_NAME',
+        sobrenome,
+      });
+
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
+          case 'CHANGE_NAME':
+              return {
+                  ...state,
+                  nome: action.nome,
+              };
+          case 'CHANGE_LAST_NAME':
+              return {
+                  ...state,
+                  sobrenome: action.sobrenome,
+              };
           default:
             return state;
         }
