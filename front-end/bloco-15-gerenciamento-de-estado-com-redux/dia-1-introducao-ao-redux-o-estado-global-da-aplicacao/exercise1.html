@@ -51,16 +51,38 @@
                 case 'PREVIOUS_COLOR':
                     return {
                         ...state,
-                        index: state.index === 0 ? state.colors.length - 1 : state.index + 1,
+                        index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
                     };
                 default:
                     return state;
             }
         };
 
+        const nextColor = () => ({
+            type: 'NEXT_COLOR',
+        });
+
+        const previousColor = () => ({
+            type: 'PREVIOUS_COLOR',
+        });
+
         const store = Redux.createStore(reducer);
 
-        console.log(store.getState());
+
+        const previousButton = document.getElementById('previous');
+        const nextButton = document.getElementById('next');
+
+        previousButton.addEventListener('click', () => {
+            store.dispatch(previousColor());
+            console.log(store.getState());
+        });
+
+        nextButton.addEventListener('click', () => {
+            store.dispatch(nextColor());
+            console.log(store.getState());
+        });
+
+
 
     </script>
 </body>
