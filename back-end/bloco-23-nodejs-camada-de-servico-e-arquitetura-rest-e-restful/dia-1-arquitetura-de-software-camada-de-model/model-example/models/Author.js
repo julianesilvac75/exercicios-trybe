@@ -36,6 +36,26 @@ const getAll = async () => {
       .map(getNewAuthor));
 };
 
+// Busca uma pessoa autora específica, a partir do ID da pessoa autora a ser recuperado dos parâmetros:
+const findById = async (id) => {
+  // Substituimos o id por `?` na query, depois, ao executá-la, informamos um array com o di para o método execute; o `mysql2` vai realizar, de forma segura, a substituição do `?` pelo id informado
+  const query = 'SELECT first_name, middle_name, last_name FROM model_example.authors WHERE id = ?';
+  const [ authorData ] = await connection.execute(query, [id]);
+
+  if (authorData.length === 0) return null;
+
+  // Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID
+  const { firstName, middleName, lastName } = authorData.map(serialize)[0];
+
+  return getNewAuthor({
+    id,
+    firstName,
+    middleName,
+    lastName,
+  });
+};
+
 module.exports = {
   getAll,
+  findById,
 };
