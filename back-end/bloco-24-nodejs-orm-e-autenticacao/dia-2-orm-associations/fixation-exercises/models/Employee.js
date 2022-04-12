@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     timestamps: false, // remove a obrigatoriedade de utilizar os campos `createdAt` e `updatedAt`
     tableName: 'Employees',
-    underscore: true,
+    underscored: true,
   });
 
   Employee.associate = (models) => {
