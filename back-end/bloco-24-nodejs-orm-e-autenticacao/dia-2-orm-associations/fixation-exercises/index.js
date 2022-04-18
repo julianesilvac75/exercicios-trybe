@@ -7,7 +7,9 @@ const config = require('./config/config');
 const app = express();
 app.use(bodyParser.json());
 
-const sequelize = new Sequelize(config.development);
+const sequelize = new Sequelize(
+  process.env.NODE_ENV === 'test' ? config.test : config.development
+);
 
 app.get('/employees', async (req, res) => {
   try {
@@ -145,7 +147,9 @@ app.post('/employees', async (req, res) => {
         city, street, number, employeeId: employee.id
       }, { transaction: t });
 
-      return res.status(201).json({ message: 'Cadastrado com sucesso' });
+      return res.status(201).json({
+        id: employee.id,
+        message: 'Cadastrado com sucesso' });
     });
 
     // Se chegou até aqui é porque as operações foram concluídas com sucesso, não sendo necessário finalizar a transação manualmente.
