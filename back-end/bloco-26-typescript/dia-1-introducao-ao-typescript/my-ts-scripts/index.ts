@@ -43,3 +43,32 @@ createdAt: ${createdAt}`);
 }
 
 characters.forEach(printCharacter);
+
+// Exercício 2
+enum Months {
+  January = 1,
+  February,
+  March,
+  April,
+  May,
+  June,
+  July,
+  August,
+  September,
+  October,
+  November,
+  December
+};
+
+let month: Months;
+
+month = Months.September;
+console.log(month);
+
+const novembro = Months[11];
+console.log(novembro);
+
+const mesOnze = Months.November;
+console.log(mesOnze);
+
+
