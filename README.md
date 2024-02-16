@@ -1,9 +1,14 @@
-## Turma 16 | Agosto/2021
+## Class 16 | August/2021
 
-A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional das pessoas estudantes. Com o Modelo de Sucesso Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando já estiver trabalhando.
+Trybe is a web development school with a genuine commitment to the professional success of its students. With the Shared Success Model, those studying at Trybe have the option to pay only when they are already working.
 
-A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional das pessoas estudantes. Com o Modelo de Sucesso Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando já estiver trabalhando.
+Trybe is a web development school with a genuine commitment to the professional success of its students. With the Shared Success Model, those studying at Trybe have the option to pay only when they are already working.
 
-São mais de 1500 horas de formação que aborda fundamentos de desenvolvimento web, desenvolvimento, Front-end, Back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
+There are more than 1500 hours of training covering web development fundamentals, Front-end, Back-end, computer science, software engineering, agile methodologies, and behavioral skills.
 
-Neste repositório ficarão salvos todos os exercícios feitos ao longo do curso.
+This repository contains all the exercises done throughout the course.
+
+
+
+
+
